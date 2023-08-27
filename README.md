@@ -68,14 +68,14 @@ Your cluster includes 4 nodes (servers) that you will first need to name
 
 #### :round_pushpin: Installing services
 
-- [ ] Installer le [CNI](https://kubernetes.io/docs/concepts/cluster-administration/networking/) (Container Network Interface) géré par le Service [:droplet: Kubelet](.doc/kubelet.md) :writing_hand:	 
+- [ ] Install the [CNI](https://kubernetes.io/docs/concepts/cluster-administration/networking/) (Container Network Interface) managed by the Service [:droplet: Kubelet](.doc/kubelet.md) :writing_hand:	 
 
-- [ ] Installer le [CRI](https://kubernetes.io/docs/setup/production-environment/container-runtimes/) (Container Runtime Interface)  défini par l'[OCI](https://opencontainers.org) et géré par les Services:
+- [ ] Install the [CRI](https://kubernetes.io/docs/setup/production-environment/container-runtimes/) (Container Runtime Interface)  defined by the [OCI](https://opencontainers.org) and managed by the Services:
 
-| Services  | Descriptions |
-|---|---------------------------------------------------------------------------|
-| [:whale: Docker](.doc/docker.md) :writing_hand:  | ( :bulb: __À installer uniquement si Docker n'est pas déjà sur le serveur__ ) |
-| [:whale2: Containerd](.doc/containerd.md) :writing_hand:	| ( :bangbang: __Installation Obligatoire__ ) |
+| Services                                                  | 
+|-----------------------------------------------------------|
+| [:whale: Docker](.doc/docker.md) :writing_hand:           |
+| [:whale2: Containerd](.doc/containerd.md) :writing_hand:	|
 
 ## :ab: Les plans
 
