@@ -77,43 +77,42 @@ Your cluster includes 4 nodes (servers) that you will first need to name
 | [:whale: Docker](.doc/docker.md) :writing_hand:           |
 | [:whale2: Containerd](.doc/containerd.md) :writing_hand:	|
 
-## :ab: Les plans
+## :ab: The plans
 
-:busts_in_silhouette: activité en groupe
+:busts_in_silhouette: Group Activity
 
-##### :control_knobs: Le plan de contrôle (control plane)
+##### :control_knobs: The Control Plane
 
-:warning: Assurez vous que votre domaine a tous les noms de serveurs (noeuds) liés à votre grappe
+:warning: Make sure your domain has all the server names (nodes) linked to your cluster
 
-- [ ] Installer le [plan de contrôle](.doc/control-plane.md) :writing_hand:	 
-- [ ] Initialiser le réseau de gousses (pod network) en utilisant le [CNI plugin](.doc/cni-plugin.md) :writing_hand: Cilium
+- [ ] Install the [control plane](.doc/control-plane.md) :writing_hand:	 
+- [ ] Initialize the pod network using the [CNI plugin](.doc/cni-plugin.md) :writing_hand: Cilium
 
-:star2: Mais qu'est-ce qu'un [manifeste](.doc/manifest.md) :writing_hand: ?
+:star2: But what is a [manifest](.doc/manifest.md) :writing_hand: ?
 
-##### :abacus: Les plan de données (data plane)
+##### :abacus: The Data Plane
 
-- [ ] Permettre aux autres noeux de [joindre](.doc/data-plane.md) :writing_hand: la grappe.
+- [ ] Allow other nodes to [attach](.doc/data-plane.md) :writing_hand: the cluster.
 
+## :joystick: Control the cluster
 
-## :joystick: Contrôller la grappe
+:busts_in_silhouette: Group Activity
 
-:busts_in_silhouette: activité en groupe
+:round_pushpin: Install the [:toolbox: tools](.doc/kube-tools-pc.md) :writing_hand: on your PC to manage the cluster
 
-:round_pushpin: Installer les [:toolbox: outils](.doc/kube-tools-pc.md) :writing_hand: sur son PC pour gérer la grappe
+| Tools     | Description             |
+|-----------|-------------------------|
+| `kubectl` | Controlling the cluster |
+| :package: `helm`    | Kubernetes Package Manager |
+| :level_slider: `lens`    | IDE allowing the management of Kubernetes |
 
-| outil     | Description          |
-|-----------|----------------------|
-| `kubectl` | Contrôller la grappe |
-| :package: `helm`    | Gestionnaire de librairies (Package Manager) de Kubernetes |
-| :level_slider: `lens`    | IDE permettant la gestion de Kubernetes |
+:round_pushpin: Put the `configuration` file in context to allow remote cluster management
 
-:round_pushpin:  Mettre le fichier de `configuration` en contexte pour permettre la gestion de la grappe à distance
+- [ ] Install configuration file in [context](.doc/contexts.md) :writing_hand: `Kubernetes`
 
-- [ ] Installer le fichier de configuration dans un [contexte](.doc/contexts.md) :writing_hand:	 `Kubernetes`
+:round_pushpin:  Test its connection to the cluster
 
-:round_pushpin:  Tester sa connexion à la grappe
-
-- [ ] Vérifier que le context courant pointe bien sur `kubernetes-admin@kubernetes`
+- [ ] Check that the current context points to `kubernetes-admin@kubernetes`
 
 ```
 k config get-contexts
@@ -124,7 +123,7 @@ CURRENT   NAME                          CLUSTER      AUTHINFO           NAMESPAC
 *         kubernetes-admin@kubernetes   kubernetes   kubernetes-admin   
 ```
 
-- [ ] Vérifier que la grappe est complète
+- [ ] Verify that the cluster is complete
 
 ```
 k get nodes
@@ -136,17 +135,17 @@ nunki    Ready    <none>          18h   v1.27.1
 rukbat   Ready    control-plane   22h   v1.27.1
 ```
 
-- [ ] Visualiser la grappe dans :level_slider: `Lens`
+- [ ] View cluster in :level_slider: `Lens`
 
-:warning: Attention à ne pas installer d'applications, il manque la partie stockage.
+:warning: Be careful not to install applications, the storage part is missing.
 
-## :cl: La classe de stockage (Storage Class)
+## :cl: The Storage Class
 
-#### :roll_of_paper: Le périphérique (Block Device)
+#### :roll_of_paper: The device (Block Device)
 
-:bust_in_silhouette: activité individuelle à appliquer à partir des :abacus: plans de données: 
+:bust_in_silhouette: individual activity to apply from :abacus: data plans:
 
-Le but de l'exercice est de créer un disque ou plutôt un volume logique et de le mettre en réseau avec `iSCSI`
+The goal of the exercise is to create a disk or rather a logical volume and network it with `iSCSI`
 
 
 - [ ] Installer le Service [:minidisc: iSCSI](.doc/iscsi) :writing_hand:	permettant une implémentation [SAN](https://en.wikipedia.org/wiki/Storage_area_network) du protocole d'[`open-iscsi`](http://www.open-iscsi.com/)
