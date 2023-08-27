@@ -147,28 +147,27 @@ rukbat   Ready    control-plane   22h   v1.27.1
 
 The goal of the exercise is to create a disk or rather a logical volume and network it with `iSCSI`
 
+- [ ] Install the [:minidisc: iSCSI](.doc/iscsi) :writing_hand: Service enabling a [SAN](https://en.wikipedia.org/wiki/Storage_area_network) implementation of the [`open- iscsi`](http://www.open-iscsi.com/) protocol
+- [ ] Create the logical volume [:cd: lvm](.doc/iscsi/lvm.md) :writing_hand: called `iscsi-lv`
+- [ ] Prepare the [device](.doc/iscsi/blockdevice.md) in block mode and save it in a `blockdevice-xxxx-xxx-xxx.md` file in your cluster directory.
 
-- [ ] Installer le Service [:minidisc: iSCSI](.doc/iscsi) :writing_hand:	permettant une implémentation [SAN](https://en.wikipedia.org/wiki/Storage_area_network) du protocole d'[`open-iscsi`](http://www.open-iscsi.com/)
-- [ ] Créer le volume logique [:cd: lvm](.doc/iscsi/lvm.md) :writing_hand:	appellé `iscsi-lv`
-- [ ] Préparer le [périphérique](.doc/iscsi/blockdevice.md) en mode block et l'enregistrer dans un fichier `blockdevice-xxxx-xxx-xxx.md` du répertoire de votre grappe.
-
-#### :floppy_disk: Le stockage 
+#### :floppy_disk: Storage
 
 [:bookmark: Container Storage](https://landscape.cncf.io/card-mode?category=cloud-native-storage&grouping=category)
 
-:busts_in_silhouette: activité en groupe à appliquer à partir du :control_knobs: plan de contrôle: 
+:busts_in_silhouette: group activity to apply from the :control_knobs: control plane:
 
-:round_pushpin: Le modèle de stockage de kubernetes 
+:round_pushpin: The kubernetes storage model
 
-<img src="images/kube-storage-model.png" width="382" height="189"></img>
+<img src="images/kube-storage-model.png" width=50% height=50% ></img>
 
-Le standard Kubernetes permet aux founisseurs d'infrastructure d'utiliser leur propre moteur de stockage pour conteneur ou encore `CS` (Container Storage). Pour cela, la norme Kubernetes fournit une interface [CSI](https://kubernetes-csi.github.io/docs). Cette interface permet d'utiliser des [Polices](https://kubernetes-csi.github.io/docs/drivers.html) ou `Plugin` en fonction de l'environnement info-nuagique ou métal.
+The Kubernetes standard allows infrastructure providers to use their own container storage engine or `CS` (Container Storage). For this, the Kubernetes standard provides an interface [CSI](https://kubernetes-csi.github.io/docs). This interface allows to use [Driver](https://kubernetes-csi.github.io/docs/drivers.html) or `Plugin` depending on the info-cloud or metal environment.
 
-Dans notre environnement, nous allons choisir [openEBS](https://openebs.io) et son `Moteur de Stockage` [cStor](https://openebs.io/docs/user-guides/cstor) comme `CSI Plugin`
+In our environment, we will choose [openEBS](https://openebs.io) and its `Storage Engine` [cStor](https://openebs.io/docs/user-guides/cstor) as `CSI Plugin `
 
 <img src="images/1-config-sequence.svg" width="657" height="145"> </img>
 
-:round_pushpin:  [Installer](.doc/openebs/install.md):pinching_hand: le `CSI Plugin` [openEBS](https://openebs.io)
+:round_pushpin: [Install](.doc/openebs/install.md) :pinching_hand: the `CSI Plugin` [openEBS](https://openebs.io)
 
 :round_pushpin:  Créer la **classe de stockage (sc)** `standard` 
 
