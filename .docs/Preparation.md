@@ -1,4 +1,4 @@
-## :zero: Preparation du serveur
+## :zero: Node Preparation
 
 - [ ] Make sure you have the right hostname (based on your cluster)
 
