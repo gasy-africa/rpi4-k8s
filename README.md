@@ -53,7 +53,7 @@ Your cluster includes 4 nodes (servers) that you will first need to name
 - [ ] Its `bridge`
 - [ ] Its extra `modules` (Raspberry Pi)
 
-[Preparation](.doc/Preparation.md) :writing_hand:	
+[Preparation](.docs/Preparation.md) :writing_hand:	
 
 
 ## :b: The components
