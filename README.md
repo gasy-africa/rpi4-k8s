@@ -169,17 +169,17 @@ In our environment, we will choose [openEBS](https://openebs.io) and its `Storag
 
 :round_pushpin: [Install](.doc/openebs/install.md) :pinching_hand: the `CSI Plugin` [openEBS](https://openebs.io)
 
-:round_pushpin:  Créer la **classe de stockage (sc)** `standard` 
+:round_pushpin: Create the `standard` **Storage Class (sc)**
 
-- [ ] Installer les périphériques préalablement définis ci-dessus 
-- [ ] Créer d'un réservoir de stockage `pool` avec les :three: périphériques
-- [ ] Créer la **classe de stockage (sc)** `standard` avec le réservoir de stockage `pool`
+- [ ] Install the devices previously defined above
+- [ ] Create a `pool` storage tank with the :three: devices
+- [ ] Create `standard` **storage class (sc)** with `pool` storage tank
 
-Utiliser les [operations d'administration](.doc/openebs/adminop.md):pinching_hand:. suivante pour la création de la  **classe de stockage (sc)** `standard`
+Use the following [admin operations](.doc/openebs/adminop.md) :pinching_hand:. for creating the **storage class (sc)** `standard`
 
-:round_pushpin:  Vous pouvez maintenant utiliser la **classe de stockage (sc)** `standard` définie par `défaut`
+:round_pushpin: You can now use the `standard` **storage class (sc)** defined by `default`
 
-:bulb: Vérifier que la classe de stockage par **défaut** est bien **standard**
+:bulb: Check that the **default** storage class is **standard**
 
 ```
 kubectl get storageclasses        
