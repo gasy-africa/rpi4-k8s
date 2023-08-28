@@ -143,17 +143,17 @@ kubeadm join rukbat.sagittarius.gasy.africa:6443 --token ajqivp.mplynkn6sywlo0cf
 
 The cluster's initialization will give a long text where there is a :tickets: token `--token` used to:
 
-- [ ] retrieve the [configuration file](control-plane.md#b-use-your-cluster-on-the-control-plane-servernode-):writing_hand: to manage the cluster
+- [ ] retrieve the [configuration file](control-plane.md#b-use-your-cluster-on-the-control-plane-servernode-) :writing_hand: to manage the cluster
 - [ ] initialize the `pod network`
 - [ ] allow other nodes to `join` the cluster.
 
 ## :b: Use your cluster (on the control plane server/node )
 
-:round_pushpin: Pour `contrôler` la grappe à partir du serveur, il faut utiliser l'outil de contrôle de grappes Kubernetes `kubectl`.
+:round_pushpin: To `control` the cluster from the server, use the Kubernetes cluster control tool `kubectl`.
 
-`kubectl` a besoin d'un fichier de configuration, `$HOME/.kube/config`.
+`kubectl` needs a configuration file, `$HOME/.kube/config`.
 
-Pour installer ce fichier de configuration, taper les commandes suivantes:
+To install this configuration file, type the following commands:
 
 ```
 mkdir -p $HOME/.kube
@@ -161,13 +161,13 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-Alternativement, si vous êtes l'utilisateur `root` , vous pouvez utiliser la commande:
+Alternatively, if you are the `root` user, you can use the command: (not recommended)
 
 ```
 export KUBECONFIG=/etc/kubernetes/admin.conf
 ```
 
-:round_pushpin: Vérifier le contexte courant (avec `kubectl`)
+:round_pushpin: Check the current context (with `kubectl`)
 
 ```
 kubectl config get-contexts
@@ -178,14 +178,14 @@ CURRENT   NAME                          CLUSTER      AUTHINFO           NAMESPAC
 *         kubernetes-admin@kubernetes   kubernetes   kubernetes-admin   
 ```
 
-:round_pushpin: Renommer le contexte courant
+:round pushpin: Rename current context
 
 ```
 kubectl config rename-context kubernetes-admin@kubernetes kubernetes-admin@sagittarius
 ```
 > Context "kubernetes-admin@kubernetes" renamed to "kubernetes-admin@sagittarius".
 
-:round_pushpin: Vérifier les noeux
+:round pushpin: Check nodes
 
 ```
 kubectl get nodes
@@ -196,12 +196,12 @@ NAME         STATUS     ROLES    AGE     VERSION
 rukbat       NotReady   master   4m23s   v1.27.2
 ```
 
-:round_pushpin: Vérifier l'information sur la grappe
+:round pushpin: Check cluster info
 
 ```
 kubectl cluster-info
 ```
-> Retourne :
+> Returns :
 ```yaml 
 Kubernetes control plane is running at https://rukbat.sagittarius.gasy.africa:6443
 CoreDNS is running at https://rukbat.sagittarius.gasy.africa:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
@@ -221,34 +221,34 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 * `validate service connection: CRI v1 image API is not implemented for endpoint "unix:///var/run/containerd/containerd.sock"`
 
-:round_pushpin: Si vous rencontrez cette erreur, c'est que le [CRI](https://kubernetes.io/docs/concepts/architecture/cri/) ne vient pas avec Docker Engine par défaut 
+:round_pushpin: If you encounter this error, the [CRI](https://kubernetes.io/docs/concepts/architecture/cri/) does not come with Docker Engine by default
 
 ```
 sudo kubeadm config images pull
 ```
-> Retourne :
+> Returns :
 <pre> 
 failed to pull image "registry.k8s.io/kube-apiserver:v1.26.3": output: time="2023-04-06T21:11:34Z" level=fatal msg="validate service connection: CRI v1 image API is not implemented for endpoint \"unix:///var/run/containerd/containerd.sock\": rpc error: code = Unimplemented desc = unknown service runtime.v1.ImageService"
 , error: exit status 1
 To see the stack trace of this error execute with --v=5 or higher
 </pre>
 
-:round_pushpin: Installer le `CRI`  
+:round_pushpin: Install the `CRI`  
 
-- [ ] Enlever le vieux paquet `containerd` au cas oû il est installé
+- [ ] Remove the old `containerd` package in case it is installed
 
-* Supprimer le fichier de configuration 
+* Delete config file
 
 ```
 sudo rm /etc/containerd/config.toml
 ```
 
-* Supprimer le paquet
+* Remove package
 
 ```
 sudo apt remove containerd
 ```
-> Retourne :
+> Returns :
 <pre>
 Reading package lists... Done
 Building dependency tree... Done
@@ -257,12 +257,12 @@ Package 'containerd' is not installed, so not removed
 0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
 </pre>
 
-- [ ] Installer le paquet `containerd`
+- [ ] Install `containerd` package
 
 ```
 sudo apt update, apt install containerd.io
 ```
-> Retourne :
+> Returns :
 ```yaml
 Hit:1 https://download.docker.com/linux/ubuntu focal InRelease
 Hit:3 http://ca.archive.ubuntu.com/ubuntu jammy InRelease                                 
@@ -306,25 +306,25 @@ No user sessions are running outdated binaries.
 No VM guests are running outdated hypervisor (qemu) binaries on this host.
 ```
 
-- [ ] Vérifier que le service `containerd` est disponible au démarrage
+- [ ] Check that the `containerd` service is available at startup
 
 ```
 systemctl is-enabled containerd
 ```
 > enabled
 
-- [ ] Par précaution redémarrer le service `containerd`
+- [ ] As a precautionary action, restart the `containerd` service
 
 ```
 sudo systemctl restart containerd
 ```
 
-- [ ] Vérifier le service `containerd`
+- [ ] Check the `containerd` service
 
 ```
 systemctl status containerd
 ```
-> Retourne :
+> Returns :
 ```yaml
 ● containerd.service - containerd container runtime
      Loaded: loaded (/lib/systemd/system/containerd.service; enabled; vendor preset: enabled)
@@ -349,6 +349,6 @@ Apr 06 21:47:55 betelgeuse containerd[21240]: time="2023-04-06T21:47:55.40792772
 lines 1-20
 ```
 
-* taper sur `q` pour quitter
+* hit `q` to quit
 
 - [ ] [Updated: Dockershim Removal FAQ](https://kubernetes.io/blog/2022/02/17/dockershim-faq/)
