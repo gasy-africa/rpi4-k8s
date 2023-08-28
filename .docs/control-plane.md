@@ -6,9 +6,9 @@
 
 The default version of `Docker` does not come with the CRI (`containerd`) you have to install it
 
-## :a: Install [control plane](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#initializing-your-control-plane-node)
+## :a: Initializing your [control plane](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#initializing-your-control-plane-node) node
 
-#### :construction: [Installer le CRI](#x-troubleshooting-cri-v1-runtime-api-is-not-implemented) :construction:
+#### :construction: [Installing the CRI](#x-troubleshooting-cri-v1-runtime-api-is-not-implemented) :construction:
 
 :round_pushpin: Download images (to speed up the process)
 
@@ -51,7 +51,7 @@ registry.k8s.io/coredns/coredns:v1.10.1
 ```
 sudo kubeadm init \
   --pod-network-cidr=172.16.0.0/16 \
-  --control-plane-endpoint=<LE PLAN DE CONTROLE DE VOTRE GRAPPE>
+  --control-plane-endpoint=<YOUR CLUSTER'S CONTROL PLAN>
 ```
 > Returns:
 ```yaml
