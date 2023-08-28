@@ -138,7 +138,7 @@ sudo cat /etc/rtslib-fb-target/saveconfig.json
 }
 ```
 
-:bulb: List all the targets
+- [ ] List all the targets
 
 ```
 sudo targetcli ls
