@@ -52,7 +52,7 @@ systemctl is-enabled containerd
 
 ## :ab: Setting the `CGROUPv2` for `Systemd`
 
-- [ ] Goal: Fix `cgroup` related to `Systemd` [:bangbang: Issues with "stability" with Kubernetes cluster before adding networking](https://stackoverflow.com/questions/72567945/issues-with-stability- with-kubernetes-cluster-before-adding-networking/73743910#73743910)
+- [ ] Goal: Fix `cgroup` related to `Systemd` [:bangbang: Issues with "stability" with Kubernetes cluster before adding networking](https://stackoverflow.com/questions/72567945/issues-with-stability-with-kubernetes-cluster-before-adding-networking/73743910#73743910)
 
 :round_pushpin: Is the system using [`cgroup2`](https://kubernetes.io/docs/concepts/architecture/cgroups/#check-cgroup-version)? (if not, `tmpfs` is displayed)
 
