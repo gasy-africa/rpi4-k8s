@@ -78,8 +78,8 @@ Your cluster includes 4 nodes (servers) that you will first need to name
 
 :warning: Make sure your domain has all the server names (nodes) linked to your cluster
 
-- [ ] Install the [control plane](.doc/control-plane.md) :writing_hand:	 
-- [ ] Initialize the pod network using the [CNI plugin](.doc/cni-plugin.md) :writing_hand: Cilium
+- [ ] Install the [control plane](.docs/control-plane.md) :writing_hand:	 
+- [ ] Initialize the pod network using the [CNI plugin](.docs/cni-plugin.md) :writing_hand: Cilium
 
 :star2: But what is a [manifest](.doc/manifest.md) :writing_hand: ?
 
