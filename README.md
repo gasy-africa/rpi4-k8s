@@ -188,7 +188,7 @@ standard (default)   cstor.csi.openebs.io   Delete          Immediate           
 
 ## :rocket: The Services
 
-[:bookmark: Service](https://kubernetes.io/fr/docs/concepts/services-networking/service/)
+[:bookmark: Service](https://kubernetes.io/docs/concepts/services-networking/service/)
 
 :busts_in_silhouette: group activity
 
@@ -212,7 +212,7 @@ Each student will have to install his/her applications in the cluster
 
 ## :rocket: Services
 
-[:bookmark:Service](https://kubernetes.io/fr/docs/concepts/services-networking/service/)
+[:bookmark:Service](https://kubernetes.io/docs/concepts/services-networking/service/)
 
 # References
 
