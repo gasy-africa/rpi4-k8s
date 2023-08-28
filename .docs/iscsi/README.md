@@ -61,6 +61,8 @@ Created default portal listening on all IPs (0.0.0.0), port 3260.
 /iscsi> 
 ```
 
+:bulb: Note: Once again, check the `/etc/rtslib-fb-target/saveconfig.json` config file
+
 ```
 sudo cat /etc/rtslib-fb-target/saveconfig.json
 ```
@@ -157,10 +159,6 @@ o- / ...........................................................................
   o- loopback ....................................................................................... [Targets: 0]
   o- vhost .......................................................................................... [Targets: 0]
 ```
-
-
-
-
  
  # References
  
