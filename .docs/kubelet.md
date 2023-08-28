@@ -21,7 +21,7 @@ export KUBEVERSION=1.27.2
 ```
 sudo apt update && sudo apt -y install kubelet=${KUBEVERSION}-00
 ```
-> Retourne :
+> Returns :
 ```yaml
 Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [119 kB]
@@ -42,20 +42,19 @@ kubelet set to manually installed.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 ```
 
-:round_pushpin:  Prévenir l'altération (mise à jour) du service :droplet: kubelet
+:round_pushpin:  Prevent tampering (updating) of the :droplet: kubelet service
 
 ```
 sudo apt-mark hold kubelet
 ```
 > kubelet set on hold.
 
-
-## :gear: Où est le fichier de service `kubelet` [drop-in file](https://stackoverflow.com/questions/59842743/what-is-a-drop-in-file-what-is-a-drop-in-directory-how-to-edit-systemd-service) (i.e. fichier systemd .conf)
+## :gear: Where is the `kubelet` service file [drop-in file](https://stackoverflow.com/questions/59842743/what-is-a-drop-in-file-what-is-a -drop-in-directory-how-to-edit-systemd-service) (i.e. systemd .conf file)
 
 ```
 sudo cat /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 ```
-> Retourne
+> Returns
 ```yaml
 # Note: This dropin only works with kubeadm and kubelet v1.11+
 [Service]
@@ -70,14 +69,14 @@ ExecStart=
 ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS
 ```
 
-## :one: Tout de suite après l'installation du service
+## :one: Immediately after installing the service
 
-:+1: Tester que le service `kubelet` est chargé **(loaded)**
+:+1: Test that the `kubelet` service is loaded **(loaded)**
 
 ```
 systemctl status kubelet
 ```
-> Retourne
+> Returns
 ```yaml
 ● kubelet.service - kubelet: The Kubernetes Node Agent
      Loaded: loaded (/lib/systemd/system/kubelet.service; enabled; vendor preset: enabled)
@@ -90,17 +89,17 @@ systemctl status kubelet
         CPU: 222ms
 ```
 
-:bulb: Appuyer sur `q` pour quitter
+:bulb: Press `q` to quit
 
-## :two: Démarrer le :droplet: service `kubelet`
+## :two: Start the :droplet: `kubelet` service
 
 ``` 
 sudo systemctl enable kubelet && sudo systemctl start kubelet
 ```
 
-#### :warning: Le service `kubelet` ne sera disponible qu'après l'initialisation de la grappe `kubeadm init`
+#### :warning: `kubelet` service will only be available after `kubeadm init` cluster initialization
 
-## [:back:](../README.md#round_pushpin-installation-des-services)
+## [:back:](../README.md#round_pushpin-installing-services)
 
 # Références
 
@@ -109,14 +108,14 @@ https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/kubelet-in
 
 # :x: Troubleshooting
 
-:one: Si vous vous êtes trompé de version 
+:one: If you got the wrong version
 
-- [ ] vérifier la version installée
+- [ ] check installed version
 
 ```
 sudo dpkg --list kubelet
 ```
-> Retourne
+> Returns
 ```
 Desired=Unknown/Install/Remove/Purge/Hold
 | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
@@ -126,31 +125,31 @@ Desired=Unknown/Install/Remove/Purge/Hold
 ii  kubelet        1.26.3-00    amd64        Kubernetes Node Agent
 ```
 
-- [ ] Si ce n'est pas la bonne version, 
+- [ ] If it is not the correct version,
 
-  - [ ] enlever le marquage
-
+   - [ ] remove marking
+   
      ```
      sudo apt-mark unhold kubelet kubeadm
      ```
 
-   - [ ] enlever la librairie
+   - [ ] remove the library
 
      ```
      sudo apt purge kubelet
      ```
 
-:bulb: Si une librarie en dépend, désinstaller la (i.e. `kubeadm`)
+:bulb: If a library depends on it, uninstall it (v.i.e. `kubeadm`)
 
-- [ ] Réinstaller la librairie avec la bonne version
+- [ ] Reinstall the library with the correct version
 
-     - [ ] Choisir une version spécifique de Kubernetes
+     - [ ] Choose a specific version of Kubernetes
 
      ```
      export KUBEVERSION=1.27.2
      ``` 
 
-     - [ ] reCommencer l'installation (incluant kubeadm)
+- [ ] restart installing (including kubeadm)
 
      ```
      sudo apt -y install kubelet=${KUBEVERSION}-00 && sudo apt -y install kubeadm=${KUBEVERSION}-00
