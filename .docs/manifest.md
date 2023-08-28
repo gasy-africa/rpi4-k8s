@@ -27,7 +27,7 @@ kubectl apply --filename monfichier.yaml
 kubectl apply --filename https://myserver.com/myfile.yaml
 ```
 
-# [:back:](../#control_knobs-the-planes) :angry: I knew that already
+# [:back:](../#ab-the-planes) :angry: I knew that already
 
 # References
 
