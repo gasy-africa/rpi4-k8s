@@ -103,8 +103,10 @@ kubeadm join betelgeuse.orion.gasy.africa:6443 --token fu6544.o36km11eg95slej1  
 
 :abacus: On the data plane
 
-```bash
-$ sudo kubeadm join rukbat.sagittarius.gasy.africa:6443 --token fu6544.o36km11eg95slej1     --discovery-token-ca-cert-hash sha256:348cf90011e40088944a5f5cfe3279c04a0dfb24f56ba21209e61fdc15af3645 
+```powershell
+sudo kubeadm join rukbat.sagittarius.gasy.africa:6443 \
+                      --token fu6544.o36km11eg95slej1 \
+                      --discovery-token-ca-cert-hash sha256:348cf90011e40088944a5f5cfe3279c04a0dfb24f56ba21209e61fdc15af3645 
 ```
 
 ## :x: Troubleshooting
