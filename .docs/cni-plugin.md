@@ -139,7 +139,7 @@ NAME     STATUS   ROLES           AGE   VERSION
 rukbat   Ready    control-plane   16m   v1.27.2
 ```
 
-## [:back:](../#ab-the-planes)
+# [:back:](../#ab-the-planes)
 
 ## :x: Troubleshooting
 
