@@ -208,7 +208,7 @@ OUT="--output=json"; kubeadm version ${OUT} && kubectl version --client ${OUT}
 }
 ```
 
-## [:back:](../README.md#round_pushpin-installation-des-outils)
+## [:back:](../README.md#round_pushpin-installing-tools)
 
 # References
 
