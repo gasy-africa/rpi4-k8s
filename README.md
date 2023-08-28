@@ -85,7 +85,7 @@ Your cluster includes 4 nodes (servers) that you will first need to name
 
 ##### :abacus: The Data Plane
 
-- [ ] Allow other nodes to [attach](.doc/data-plane.md) :writing_hand: the cluster.
+- [ ] Allow other nodes [attaching](.docs/data-plane.md) :writing_hand: to the cluster.
 
 ## :joystick: Control the cluster
 
