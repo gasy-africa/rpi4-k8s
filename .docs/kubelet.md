@@ -16,7 +16,7 @@
 export KUBEVERSION=1.27.2
 ``` 
 
-- [ ] Commencer l'installation
+- [ ] Begin installing
 
 ```
 sudo apt update && sudo apt -y install kubelet=${KUBEVERSION}-00
