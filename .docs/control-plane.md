@@ -141,13 +141,13 @@ kubeadm join rukbat.sagittarius.gasy.africa:6443 --token ajqivp.mplynkn6sywlo0cf
 
 #### :tada: Your Kubernetes control-plane has initialized successfully!
 
-L'initialisation de la grappe va donner un long texte où se trouve un :tickets: jeton `--token` permettant:
+The cluster's initialization will give a long text where there is a :tickets: token `--token` used to:
 
-- [ ] de récupérer le fichier de [configuration](control-plane.md#b-utiliser-sa-grappe-sur-le-serveur---plan-de-contrôle) :writing_hand: pour gérer la grappe
-- [ ] d'initialiser le réseau de gousses (`pod network`) 
-- [ ] de permettre aux autre noeux de `joindre` la grappe. 
+- [ ] retrieve the [configuration file](control-plane.md#b-use-your-cluster-on-the-server---control-plane):writing_hand: to manage the cluster
+- [ ] initialize the `pod network`
+- [ ] allow other nodes to `join` the cluster.
 
-## :b: Utiliser sa grappe (sur le serveur - plan de contrôle)
+## :b: Use your cluster (on the control plane server/node )
 
 :round_pushpin: Pour `contrôler` la grappe à partir du serveur, il faut utiliser l'outil de contrôle de grappes Kubernetes `kubectl`.
 
