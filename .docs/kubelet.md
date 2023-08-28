@@ -49,7 +49,7 @@ sudo apt-mark hold kubelet
 ```
 > kubelet set on hold.
 
-## :gear: Where is the `kubelet` service file [drop-in file](https://stackoverflow.com/questions/59842743/what-is-a-drop-in-file-what-is-a -drop-in-directory-how-to-edit-systemd-service) (i.e. systemd .conf file)
+## :gear: Where is the `kubelet` service file [drop-in file](https://stackoverflow.com/questions/59842743/what-is-a-drop-in-file-what-is-a-drop-in-directory-how-to-edit-systemd-service) (i.e. systemd .conf file)
 
 ```
 sudo cat /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
