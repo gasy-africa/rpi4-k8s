@@ -6,14 +6,14 @@ Install the CNI Plugin to Manage Cluster Networking [Cluster Networking](https:/
 
   . [Installing Addons](https://kubernetes.io/docs/concepts/cluster-administration/addons)
 
-## :a: Installer le plugin CNI
+## :a: Install the CNI plugin
 
 
-- [ ] Le plugin CNI a utiliser est [Cilium]([https://cilium.io/](https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/))
+- [ ] The CNI plugin to use is [Cilium]([https://cilium.io/](https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/))
 
-Sur le serveur du plan de contrôle:
+On the control plane server:
 
-- [ ] Installer le binaire `cilium` dans `/usr/local/bin`
+- [ ] Install the `cilium` binary in `/usr/local/bin`
 
 ```
 CILIUM_CLI_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/master/stable.txt)
@@ -38,14 +38,12 @@ cilium-linux-arm64.tar.gz: OK
 cilium
 ```
 
-- [ ] Installer le plugin
-
+- [ ] Install plugin
 
 ```
 cilium install
 ```
 > Returns :
-
 ```yaml
 ℹ️  Using Cilium version 1.13.2
 🔮 Auto-detected cluster name: kubernetes
@@ -64,7 +62,7 @@ cilium install
 ✅ Cilium was successfully installed! Run 'cilium status' to view installation health
 ```
 
-- [ ] Vérifier le statutt
+- [ ] Check the status
 
 ```
 cilium status
@@ -87,12 +85,12 @@ Image versions    cilium             quay.io/cilium/cilium:v1.13.2@sha256:85708b
                   cilium-operator    quay.io/cilium/operator-generic:v1.13.2@sha256:a1982c0a22297aaac3563e428c330e17668305a41865a842dec53d241c5490ab: 1
 ```
 
-- [ ] Vérifier le service :droplet: `Kubelet` après l'installation du plugin CNI
+- [ ] Check service :droplet: `Kubelet` after installing CNI plugin
 
 ```
 sudo systemctl status kubelet
 ```
-> Retourne :
+> Returns :
 ```yaml
 ● kubelet.service - kubelet: The Kubernetes Node Agent
      Loaded: loaded (/lib/systemd/system/kubelet.service; enabled; vendor preset: enabled)
@@ -119,30 +117,29 @@ May 24 19:14:32 rukbat kubelet[2617]: W0524 19:14:32.034004    2617 sysinfo.go:2
 May 24 19:14:32 rukbat kubelet[2617]: W0524 19:14:32.040579    2617 machine.go:65] Cannot read vendor id correctly, set empty.
 ```
 
-:round_pushpin: Tester que le CNI :droplet: plugin est bien installé, 
+:round_pushpin: Test that the CNI :droplet: plugin is correctly installed,
 
 ```
 k get no
 ```
-> Retourne :
+> Returns :
 ```yaml
 NAME     STATUS     ROLES           AGE   VERSION
 rukbat   NotReady   control-plane   16h   v1.27.2
 ```
 
-`Ready` doit s'afficher pour le `control-plane` après quelques minutes
+`Ready` should show up for the `control-plane` after a few minutes
 
 ```
 k get no
 ```
-> Retourne :
+> Returns :
 ```yaml
 NAME     STATUS   ROLES           AGE   VERSION
 rukbat   Ready    control-plane   16m   v1.27.2
 ```
 
-## [:back:](../#control_knobs-le-plan-de-contrôle-control-plane)
-
+## [:back:](../#ab-the-planes)
 
 ## :x: Troubleshooting
 
@@ -179,12 +176,12 @@ cilium uninstall
 ✅ Cilium was successfully uninstalled.
 ```
 
-## Afficher les pods systèmes
+## Show system pods
 
 ```
 sudo crictl ps
 ```
-> Retourne :
+> Returns :
 ```yaml
 CONTAINER           IMAGE               CREATED             STATE               NAME                      ATTEMPT             POD ID              POD
 a76c06a5e77f8       97e04611ad434       16 minutes ago      Running             coredns                   0                   b56be6efe2fec       coredns-5d78c9869d-57k8b
@@ -200,49 +197,47 @@ a18ed5eb41ab8       24bc64e911039       31 minutes ago      Running             
 
 #### :round_pushpin: [Restart kube-apiserver when provisioned with kubeadm](https://stackoverflow.com/questions/42674726/restart-kube-apiserver-when-provisioned-with-kubeadm)
 
-:construction: Si on perd le `kube-apiserver` à cause d'une commande (i.e. CNI)
+:construction: If we lose the `kube-apiserver` because of a command (i.e. CNI)
 
-- [ ] :one: initialiser l'heure du fichier de configuration `kube-apiserver.yaml` avec `touch`
+- [ ] :one: initialize the time of the configuration file `kube-apiserver.yaml` with `touch`
 
 ```
 sudo touch /etc/kubernetes/manifests/kube-apiserver.yaml
-
 ```
 
-- [ ] :two: Redémarrer le service `kubelet`
+- [ ] :two: Restart the `kubelet` service 
 
 ```
 sudo systemctl restart kubelet
 ```
 
-- [ ] :two: Enlever la commande fautive (i.e. CNI)
+- [ ] :two: Remove the faulty command (i.e. CNI)
 
 ```
 cilium uninstall
 ```
 
-
-#### :round_pushpin: Nettoyer la grappe
+#### :round_pushpin: Cleaning the cluster
 
 ```
-kubectl drain betelgeuse --delete-emptydir-data --ignore-daemonsets --force
+kubectl drain rukbat --delete-emptydir-data --ignore-daemonsets --force
 ```
 
 ```
 k get no
 ```
-> Retourne :
+> Returns :
 <pre> 
 NAME         STATUS                     ROLES           AGE     VERSION
 rukbat       Ready,SchedulingDisabled   control-plane   4h17m   v1.27.1
 </pre> 
 
-#### :skull_and_crossbones: Réinitialiser la grappe
+#### :skull_and_crossbones: Reset the cluster
 
 ```
 sudo kubeadm reset
 ```
-> Retourne :
+> Returns :
 ```yaml 
 ```
 
