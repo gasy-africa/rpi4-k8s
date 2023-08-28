@@ -16,7 +16,7 @@ RaspberryPi 4 running a Kubernetes Cluster
 | [:chains: The network Infrastructure](#chains-network-infrastructure) | Defines the environment where the cluster evolves |
 
 
-## :o2: Nommage
+## :o2: Naming
 
 :busts_in_silhouette: Group Activity
 
