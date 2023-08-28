@@ -109,13 +109,13 @@ disabled_plugins = ["cri"]
 containerd config default | sudo tee /etc/containerd/config.toml
 ```
 
-* Change the `CGroup` to `TRUE`
+* Change the `CGroup` to `true`
 
 ```
 sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
 ```
 
-* Check that the `CGroup` is set to `TRUE`
+* Check that the `CGroup` is set to `true`
 
 ```
 sudo cat /etc/containerd/config.toml | grep SystemdCgroup
