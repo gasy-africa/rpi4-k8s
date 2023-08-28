@@ -1,85 +1,85 @@
 # Kube Tools
 
-Sur chacun des serveurs, installer les outils suivants
+On each of the servers, install the following tools
 
-## :zero: Preparer le serveur
+## :zero: Prepare the server
 
-Mettre le serveur à jour et le redémarrer.
+Update the server and restart it.
 
-:warning: Attention, le serveur va `reboot`er
+:warning: Warning, the server will `reboot`
 
 ```
 sudo apt update && sudo apt -y upgrade && sudo systemctl reboot
 ```
 
-## :one: Installer le [référentiel](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management) `google cloud`
+##:one: Install the [repository](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management) `google cloud`
 
-:round_pushpin: Installer `curl`, `apt-transport-https` et autres outils utilisés pour télécharger les librairies (Package Manager)
+:round_pushpin: Install `curl`, `apt-transport-https` and other tools used to download libraries (Package Manager)
 
-:bulb: Certains référentiels ont des `URL` utilisant `HTTPS`. La librairie `apt-transport-https` doit être installée pour acceder le lien `HTTPS`:
+:bulb: Some repositories have `URLs` using `HTTPS`. The `apt-transport-https` library must be installed to access the `HTTPS` link:
 
 ```
 sudo apt-get install -y apt-transport-https ca-certificates curl
 ```
 
-:round_pushpin: Ajout du référentiel de librairies `kubernetes` au référentiel de gestionnaire de libraries  
+:round_pushpin: Add `kubernetes` library repository to the library manager repository
 
-- [ ] Ajout de la clé officielle `gpg` :key: de `google cloud`  `GPG` (GNU Privacy Guard)
+- [ ] Add the official `gpg` :key: from `google cloud` `GPG` (GNU Privacy Guard)
       
-* placée dans le fichier `binaire` :grey_exclamation: `/usr/share/keyrings/kubernetes-archive-keyring.gpg`
-* en tapant la commande
+* put in the `binary` file:grey_exclamation: `/usr/share/keyrings/kubernetes-archive-keyring.gpg`
+* by typing the command
 
 ```
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://dl.k8s.io/apt/doc/apt-key.gpg 
 ```
 
-* Vérification de la clé :key: `GPG`
+* Verification of the key :key: `GPG`
 
 ```
 file /usr/share/keyrings/kubernetes-archive-keyring.gpg
 ```
 > /usr/share/keyrings/kubernetes-archive-keyring.gpg: OpenPGP Public Key Version 4, Created Sat May 21 09:50:12 2022, RSA (Encrypt or Sign, 2048 bits); User ID; Signature; OpenPGP Certificate
 
-- [ ] Ajouter le fichier `kubernetes debian` au référentiel `apt`
+- [ ] Add `kubernetes debian` file to `apt` repository
 
 ```
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" \
          | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ```
 
-- [ ] Vérifier le contenu du fichier
+- [ ] Check file content
 
 ```
 cat /etc/apt/sources.list.d/kubernetes.list
 ```
-> Retourne :
+> Returns :
 <pre> 
 deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main
 </pre>
 
-## :two: Installer **kubeadm** and **kubectl**
+## :two: Install **kubeadm** and **kubectl**
 
-:bulb: Quels outils :ice_cube: kube doit on installer? 
+:bulb: Which :ice_cube: kube tools should we installed ?
 
-| Outil   | Utilisation                                                      |
-|---------|------------------------------------------------------------------|
-| kubeadm | Outil créé pour fournir **kubeadm** `init` et **kubeadm** `join` |
-| kubectl | Outil de ligne de commande Kubernetes                            |
+| Tools   | Usage |
+|---------|--------------------------------------- ---------------------------|
+| kubeadm | Tool created to provide **kubeadm** `init` and **kubeadm** `join` |
+| kubectl | Kubernetes Command Line Tool |
 
-:round_pushpin: Installer les outils :ice_cube: `kube`
+:round_pushpin: Install the :ice_cube: tools: `kube`
 
-- [ ] Choisir une version spécifique de Kubernetes
+- [ ] Choose a specific version of Kubernetes
 
 ```
 export KUBEVERSION=1.27.2
 ``` 
 
-- [ ] Installer la version spécifique de Kubernetes
+- [ ] Install the specific version of Kubernetes
 
 ```
 sudo apt update && sudo apt install -y kubeadm=${KUBEVERSION}-00 kubectl=${KUBEVERSION}-00
 ```
-> Retourne :
+> Returns :
 ```yaml
 Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Hit:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease
@@ -161,23 +161,23 @@ No user sessions are running outdated binaries.
 No VM guests are running outdated hypervisor (qemu) binaries on this host.
 ```
 
-:round_pushpin: Prévenir l'altération (mise à jour) des outils :ice_cube: `kube`
+:round_pushpin: Prevent tampering (updating) of :ice_cube: `kube` tools
 
 ```
 sudo apt-mark hold kubeadm kubectl
 ```
-> Retourne :
+> Returns :
 ```yaml
 kubeadm set on hold.
 kubectl set on hold.
 ```
 
-:+1: Tester que les outils :ice_cube: `kube` sont installés
+:+1: Test that the :ice_cube: `kube` tools are installed
 
 ```
 OUT="--output=json"; kubeadm version ${OUT} && kubectl version --client ${OUT}
 ```
-> Retourne
+> Returns
 ```json
 {
   "clientVersion": {
