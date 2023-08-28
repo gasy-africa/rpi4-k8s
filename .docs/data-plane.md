@@ -96,17 +96,17 @@ sudo kubeadm join ${CTL_PLANE}:6443 --token ${TOKEN} --discovery-token-ca-cert-h
 kubeadm token create --print-join-command
 ```
 > Returns
-```
+<pre>
 W0325 19:10:34.388061   53964 configset.go:202] WARNING: kubeadm cannot validate component configs for API groups [kubelet.config.k8s.io kubeproxy.config.k8s.io]
 kubeadm join betelgeuse.orion.gasy.africa:6443 --token fu6544.o36km11eg95slej1     --discovery-token-ca-cert-hash sha256:348cf90011e40088944a5f5cfe3279c04a0dfb24f56ba21209e61fdc15af3645
-```
+</pre>
 
 :abacus: On the data plane
 
 ```powershell
 sudo kubeadm join rukbat.sagittarius.gasy.africa:6443 \
-                      --token fu6544.o36km11eg95slej1 \
-                      --discovery-token-ca-cert-hash sha256:348cf90011e40088944a5f5cfe3279c04a0dfb24f56ba21209e61fdc15af3645 
+       --token fu6544.o36km11eg95slej1 \
+       --discovery-token-ca-cert-hash sha256:348cf90011e40088944a5f5cfe3279c04a0dfb24f56ba21209e61fdc15af3645 
 ```
 
 ## :x: Troubleshooting
