@@ -33,7 +33,6 @@ Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 
 # [:back:](../README.md#abacus-data-plane)
 
-
 ## :cl: Token Management :tickets:
 
 If you lost the :tickets: token, or the token has expired
@@ -170,7 +169,7 @@ To see the stack trace of this error execute with --v=5 or higher
  sudo kubeadm reset
 ```
 > Returns:
-```
+```yaml
 [reset] WARNING: Changes made to this host by 'kubeadm init' or 'kubeadm join' will be reverted.
 [reset] Are you sure you want to proceed? [y/N]: y
 [preflight] Running pre-flight checks
@@ -204,7 +203,7 @@ sudo rm -rf /etc/cni $HOME/.kube/config
   
 :interrobang: Unhealthy :droplet: Kubelet
     
-```
+```yaml
 [kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
 [kubelet-check] Initial timeout of 40s passed.
 
