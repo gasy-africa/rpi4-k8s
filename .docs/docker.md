@@ -56,19 +56,19 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
-* Vérifier
+* Check the created file
 
 ```
 cat /etc/apt/sources.list.d/docker.list
 ```
 > deb [arch=arm64 signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu   jammy stable
 
-* Mettre à jour 
+* Update the repository
 
 ```
 sudo apt-get update
 ```
-> Retourne 
+> Returns
 ```yaml
 Get:1 https://download.docker.com/linux/ubuntu jammy InRelease [48.9 kB]
 Hit:2 http://ports.ubuntu.com/ubuntu-ports jammy InRelease                                                                               
@@ -81,11 +81,11 @@ Fetched 66.9 kB in 2s (29.4 kB/s)
 Reading package lists... Done
 ```
 
-:round_pushpin: Installer le :whale: moteur `Docker` [docker-ce](https://docs.docker.com/engine/install/ubuntu/)
+:round_pushpin: Install the :whale: `Docker` [docker-ce](https://docs.docker.com/engine/install/ubuntu/) engine
 
-- [ ] Choisir une version spécifique
+- [ ] Pick a specific version
 
-* Lister les versions
+* List all versions
 
 ```
 apt-cache madison docker-ce | awk '{ print $3 }'
@@ -106,13 +106,13 @@ apt-cache madison docker-ce | awk '{ print $3 }'
 ...
 ```
 
-* Choisir la version
+* Choose the version
 
 ```
 VERSION_STRING=5:24.0.1-1~ubuntu.22.04~jammy
 ```
 
-- [ ] Procéder à l'installation
+- [ ] Proceed to install
 
 ```
 sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
@@ -206,12 +206,12 @@ No user sessions are running outdated binaries.
 No VM guests are running outdated hypervisor (qemu) binaries on this host.
 ```
 
-- [ ] Vérifier que le service est actif
+- [ ] Check that the service is active
 
 ```
 systemctl status docker
 ```
-> Retourne :
+> Returns :
 ```yaml
 ● docker.service - Docker Application Container Engine
      Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
@@ -237,15 +237,15 @@ May 24 18:43:58 rukbat systemd[1]: Started Docker Application Container Engine.
 ```
 
 
-## :b: Ajouter votre utilisateur au groupe `docker`
+## :b: Add your user to the `docker` group
 
 ```
 sudo usermod -aG docker $USER
 ```
 
-* Sortez de la session et revenez pour l'activer
+* Exit the session and come back to activate the group usage
 
-* pour tester, taper la commande ssuivante et vérifier que le groupe docker est présent
+* to test, type the following command and check that the docker group is present
 
 ```
 groups
@@ -298,7 +298,7 @@ docker.socket                          enabled         enabled
 ```
 
 
-## [:back:](../README.md#round_pushpin-installation-des-services)
+## [:back:](../README.md#round_pushpin-installing-services)
 
 # References
 
