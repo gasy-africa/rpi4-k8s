@@ -70,7 +70,9 @@ No user sessions are running outdated binaries.
 No VM guests are running outdated hypervisor (qemu) binaries on this host.
 ``` 
 
-* Test again
+- [ ] Checking the `Storage Objects` and `Targets`
+
+:bulb: Note: The `iscsi` Targets should be empty
 
 ```
 sudo targetcli ls
