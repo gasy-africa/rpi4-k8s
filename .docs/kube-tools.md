@@ -59,14 +59,14 @@ deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.k
 
 ## :two: Install **kubeadm** and **kubectl**
 
-:bulb: Which :ice_cube: kubetools should we installed ?
+:bulb: Which :ice_cube: `kube`tools should we installed ?
 
 | Tools   | Usage |
 |---------|------------------------------------------------------------------|
 | kubeadm | Tool created to provide **kubeadm** `init` and **kubeadm** `join` |
 | kubectl | Kubernetes Command Line Tool |
 
-:round_pushpin: Install the :ice_cube: tools: `kube`
+:round_pushpin: Install the :ice_cube: `kube`tools
 
 - [ ] Choose a specific version of Kubernetes
 
