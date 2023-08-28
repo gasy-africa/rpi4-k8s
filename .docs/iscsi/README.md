@@ -27,7 +27,7 @@ Global pref auto_save_on_exit=true
 Configuration saved to /etc/rtslib-fb-target/saveconfig.json
 ```
 
-:bulb: Note: the `/etc/rtslib-fb-target/saveconfig.json` config file
+:bulb: Note: Check the `/etc/rtslib-fb-target/saveconfig.json` config file
 
 ```
 sudo cat /etc/rtslib-fb-target/saveconfig.json
