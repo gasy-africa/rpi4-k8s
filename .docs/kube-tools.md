@@ -12,7 +12,7 @@ Update the server and restart it.
 sudo apt update && sudo apt -y upgrade && sudo systemctl reboot
 ```
 
-##:one: Install the [repository](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management) `google cloud`
+## :one: Install the [repository](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management) `google cloud`
 
 :round_pushpin: Install `curl`, `apt-transport-https` and other tools used to download libraries (Package Manager)
 
