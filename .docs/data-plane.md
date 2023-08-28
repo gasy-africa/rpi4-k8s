@@ -76,7 +76,7 @@ kubeadm token list
 
 - [ ] Give the recovered values to the following environment variables: (for example)
 
-```
+```powershell
 CTL_PLANE="rukbat.sagittarius.gasy.africa" ; \
 TOKEN="rrmied.zty2u72rw09jm8da" ; \
 CA_CERT_HASH="2ac9eca4748cb94db31f3f271bf49d3149287bb664050a82bf8dc97bf673daa0"
