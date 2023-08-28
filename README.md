@@ -2,16 +2,12 @@
 
 RaspberryPi 4 running a Kubernetes Cluster
 
-# :wheel_of_dharma: Kubernetes on Metal
-
-L'exercice dans cette section est de préparer sa grappe (cluster) que vous installerez sur du métal.
-
 ## :book: Table of Content
 
 | Chapters                                  | Descriptions                                                       |
 |-------------------------------------------|--------------------------------------------------------------------|
 | [:o2: Naming](#o2-naming)                 | Creating and naming own cluster                                    |
-| [:a: The preparation](#a-the-preparation) | Preparer a node                                                    |
+| [:a: The preparation](#a-the-preparation) | Prepare a node                                                     |
 | [:b: The components](#b-the-components)   | Install the components forming the cluster (tools and services)    |
 | [:ab: The plans](#ab-the-plans)           | Deploy `kubernetes` control and data plans                         |
 | [:joystick: Controlling the cluster](#joystick-controlling-the-cluster) |  Controlling the cluster remotely from a user station |
@@ -207,7 +203,7 @@ standard (default)   cstor.csi.openebs.io   Delete          Immediate           
 Each student will have to install his/her applications in the cluster
 
 - [ ] Install apps with [LENS](https://k8slens.dev/)
-- [ ] Enable :rocket: the service by applying the `annotations` related to the Porter `Load Balancer` according to the [Configuration](https://github.com/CollegeBoreal/Tutorials/tree/main/2.MicroServices/3.Orchestration/1.Kubernetes/C.Cluster/0.Local/6.K8s/apps) examples of the following applications
+- [ ] Enable :rocket: the service by applying the `annotations` related to the Porter `Load Balancer` according to the [Configuration](https://github.com/CollegeBoreal/Tutoriels/tree/main/2.MicroServices/3.Orchestration/1.Kubernetes/C.Cluster/0.Local/6.K8s/apps) examples of the following applications
 - [ ] Attach the application to your domain name
 
 ## :chains: Network Infrastructure
