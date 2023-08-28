@@ -1,10 +1,10 @@
 # :droplet: CNI Plugin
 
-Installer the CNI Plugin pour gérer le réseau de gousses [Cluster Networking](https://kubernetes.io/docs/concepts/cluster-administration/networking/)
+Install the CNI Plugin to Manage Cluster Networking [Cluster Networking](https://kubernetes.io/docs/concepts/cluster-administration/networking/)
 
-* Exécuter `kubectl apply -f [podnetwork].yaml` with one of the options listed at:
+* Run `kubectl apply -f [podnetwork].yaml` with one of the options listed at:
 
-  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+  . [Installing Addons](https://kubernetes.io/docs/concepts/cluster-administration/addons)
 
 ## :a: Installer le plugin CNI
 
