@@ -1,16 +1,16 @@
 #  :droplet: kubelet
 
-| Service | Utilisation                                                   |
+| Service | Usage                                                             |
 |---------|--------------------------------------------------------------------------------------------------------------------------|
-| kubelet | Responsable de maintainir un ensemble de `pods`, qui sont composés d'un ou de plusieurs conteneurs, dans un système local |
+| kubelet | Responsible for maintaining a set of `pods`, which are composed of one or more `containers`, in a local system |
 
-## :zero: Installer la librairie
+## :zero: Install library
 
-:bulb: S'assurer que le référentiel des librairies `kubernetes` a été installé précédemment (voir [Installation des outils kubernetes](kube-tools.md#one-installer-le-référentiel-google-cloud))
+:bulb: Make sure that the `kubernetes` library repository has been installed previously (see [Installing kubernetes tools](kube-tools.md#one-install-the-google-cloud-repository))
 
-:round_pushpin: Installer la librairie du service `kubelet`
+:round_pushpin: Install the `kubelet` service library
 
-- [ ] Choisir une version spécifique de Kubernetes
+- [ ] Choose a specific version of Kubernetes
 
 ```
 export KUBEVERSION=1.27.2
