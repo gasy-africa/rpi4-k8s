@@ -6,7 +6,6 @@ A manifest specifies the desired state of an object that Kubernetes will maintai
 
 :round_pushpin: Using the manifest with a [here document](https://en.wikipedia.org/wiki/Here_document) -- with `EOF` (End Of File) separator
 
-
 ```yaml
 $ kubectl apply --filename - <<EOF
 
@@ -19,16 +18,16 @@ EOF
 :round_pushpin: Using the manifest with a `.yaml` file
 
 ```yaml
-$ kubectl apply --filename monfichier.yaml
+kubectl apply --filename monfichier.yaml
 ```
 
 :round_pushpin: Using the manifest with a URL
 
 ```yaml
-$ kubectl apply --filename https://myserver.com/myfile.yaml
+kubectl apply --filename https://myserver.com/myfile.yaml
 ```
 
-[:back:](../#control_knobs-the-planes) :angry: I knew that already
+# [:back:](../#control_knobs-the-planes) :angry: I knew that already
 
 # References
 
