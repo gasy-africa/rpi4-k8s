@@ -84,7 +84,7 @@ CA_CERT_HASH="2ac9eca4748cb94db31f3f271bf49d3149287bb664050a82bf8dc97bf673daa0"
 
 - [ ] Run the command to join the cluster
 
-```
+```powershell
 sudo kubeadm join ${CTL_PLANE}:6443 --token ${TOKEN} --discovery-token-ca-cert-hash sha256:${CA_CERT_HASH}
 ```
 
@@ -92,7 +92,7 @@ sudo kubeadm join ${CTL_PLANE}:6443 --token ${TOKEN} --discovery-token-ca-cert-h
 
 :control_knobs: On the control plane 
 
-```
+```powershell
 kubeadm token create --print-join-command
 ```
 > Returns
