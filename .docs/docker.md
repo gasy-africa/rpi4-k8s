@@ -1,25 +1,8 @@
 # Docker :whale:
 
-
-:x: Uninstall old versions
-
-Older versions of Docker went by the names of `docker`, `docker.io`, or `docker-engine`, you might also have installations of `containerd` or `runc`. Uninstall any such older versions before attempting to install a new version:
-
-```
-sudo apt-get remove docker docker-engine docker.io containerd runc
-```
-> Returns :
-```yaml
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-E: Unable to locate package docker-engine
-```
-
 ## :gear: Installation methods
 
 You can install Docker Engine in different ways, depending on your needs:
-
 
 * Set up and install Docker Engine from [Docker’s `apt` repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
 
@@ -352,3 +335,19 @@ Apr 09 22:30:10 betelgeuse dockerd[1168503]: time="2023-04-09T22:30:10.244777223
 Apr 09 22:30:10 betelgeuse systemd[1]: Started Docker Application Container Engine.
 Apr 09 22:30:10 betelgeuse dockerd[1168503]: time="2023-04-09T22:30:10.253118704Z" level=info msg="API listen on /run/docker.sock"
 ```
+
+:x: Uninstall old versions
+
+Older versions of Docker went by the names of `docker`, `docker.io`, or `docker-engine`, you might also have installations of `containerd` or `runc`. Uninstall any such older versions before attempting to install a new version:
+
+```
+sudo apt-get remove docker docker-engine docker.io containerd runc
+```
+> Returns :
+```yaml
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package docker-engine
+```
+
