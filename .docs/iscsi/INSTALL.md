@@ -3,8 +3,8 @@
 
 ## :cl: Install 
 
-1. First we need to install the targetcli interface to configure the target.
-As root (or use sudo) run the following command if you’re running Ubuntu Server.
+1. First we need to install the `targetcli` interface to configure the `target`.
+As root (or use `sudo`) run the following command if you’re running Ubuntu Server.
 
 ```
 apt install targetcli-fb
