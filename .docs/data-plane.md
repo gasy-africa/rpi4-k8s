@@ -31,7 +31,7 @@ Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 
 :bulb: Do not forget to add `sudo` 
 
-# [:back:](../README.md#abacus-data-plane)
+# [:back:](../README.md#abacus-the-data-plane)
 
 ## :cl: Token Management :tickets:
 
