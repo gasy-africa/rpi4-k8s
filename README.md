@@ -70,7 +70,7 @@ Your cluster includes 4 nodes (servers) that you will first need to name
 | [:whale: Docker](.docs/docker.md) :writing_hand:           |
 | [:whale2: Containerd](.docs/containerd.md) :writing_hand:	|
 
-## :ab: The plans
+## :ab: The planes
 
 :busts_in_silhouette: Group Activity
 
