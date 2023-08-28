@@ -41,7 +41,10 @@ sudo cat /etc/rtslib-fb-target/saveconfig.json
 }
 ```
 
-- [ ] `Create` a target
+- [ ] `Create` an `iSCSI` target by:
+
+* getting into the `iscsi` folder
+* creating a target
 
 ```
 sudo targetcli
