@@ -1,16 +1,17 @@
-# :abacus: Plan de données `data plane` 
+# :abacus: `Data Plane` 
 
-:round_pushpin: Joindre un noeud 
+:round_pushpin: Joining a node (to the cluster)
 
-À l'initialisation du plan de contrôle, un :tickets: jeton à été donné avec la commande `kubeadm`, récupérer cette commande.
+On control plane initialization, a :tickets: token was given with the `kubeadm` command, retrieve this command.
 
-Elle devrait ressembler à la suivante:
+It should look like the following:
 
 ```
 kubeadm join rukbat.sagittarius.gasy.africa:6443 \
                       --token jlqqn9.8nb1zcdjgwbn308k  \
                       --discovery-token-ca-cert-hash sha256:12232fe0c49fca1155c76364da335e26b72f95686af2dba8e1157f75a6c7f157 
 ```
+> Returns:
 ```yaml
 [preflight] Running pre-flight checks
 [preflight] Reading configuration from the cluster...
