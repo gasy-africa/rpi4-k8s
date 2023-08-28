@@ -130,19 +130,19 @@ rukbat   Ready    control-plane   22h   v1.27.1
 
 - [ ] View cluster in :level_slider: `Lens`
 
-:warning: Be careful not to install applications, the storage part is missing.
+:warning: Careful not to install statefull applications yet, the storage part is missing.
 
 ## :cl: The Storage Class
 
-#### :roll_of_paper: The device (Block Device)
+#### :roll_of_paper: The devices (Block Devices)
 
-:bust_in_silhouette: individual activity to apply from :abacus: data plans:
+:bust_in_silhouette: Individual activity to apply from :abacus: data plans:
 
-The goal of the exercise is to create a disk or rather a logical volume and network it with `iSCSI`
+The goal of the exercise is to create a disk or rather a logical volume and network to be used with `iSCSI`
 
-- [ ] Install the [:minidisc: iSCSI](.doc/iscsi) :writing_hand: Service enabling a [SAN](https://en.wikipedia.org/wiki/Storage_area_network) implementation of the [`open- iscsi`](http://www.open-iscsi.com/) protocol
-- [ ] Create the logical volume [:cd: lvm](.doc/iscsi/lvm.md) :writing_hand: called `iscsi-lv`
-- [ ] Prepare the [device](.doc/iscsi/blockdevice.md) in block mode and save it in a `blockdevice-xxxx-xxx-xxx.md` file in your cluster directory.
+- [ ] Install the [:minidisc: iSCSI](.docs/iscsi) :writing_hand: Service enabling a [SAN](https://en.wikipedia.org/wiki/Storage_area_network) implementation of the [`open- iscsi`](http://www.open-iscsi.com/) protocol
+- [ ] Create the logical volume [:cd: lvm](.docs/iscsi/lvm.md) :writing_hand: called `iscsi-lv`
+- [ ] Prepare the [device](.docs/iscsi/blockdevice.md) in block mode and save it in a `blockdevice-xxxx-xxx-xxx.md` file in your cluster directory.
 
 #### :floppy_disk: Storage
 
