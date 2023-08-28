@@ -207,7 +207,7 @@ standard (default)   cstor.csi.openebs.io   Delete          Immediate           
 Each student will have to install his/her applications in the cluster
 
 - [ ] Install apps with [LENS](https://k8slens.dev/)
-- [ ] Enable :rocket: the service by applying the `annotations` related to the Porter `Load Balancer` according to the [Configuration](https://github.com/CollegeBoreal/Tutorials/tree/main/2 .MicroServices/3.Orchestration/1.Kubernetes/C.Cluster/0.Local/6.K8s/apps) examples of the following applications
+- [ ] Enable :rocket: the service by applying the `annotations` related to the Porter `Load Balancer` according to the [Configuration](https://github.com/CollegeBoreal/Tutorials/tree/main/2.MicroServices/3.Orchestration/1.Kubernetes/C.Cluster/0.Local/6.K8s/apps) examples of the following applications
 - [ ] Attach the application to your domain name
 
 ## :chains: Network Infrastructure
