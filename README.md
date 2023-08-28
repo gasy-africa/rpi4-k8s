@@ -67,8 +67,8 @@ Your cluster includes 4 nodes (servers) that you will first need to name
 
 | Services                                                  | 
 |-----------------------------------------------------------|
-| [:whale: Docker](.doc/docker.md) :writing_hand:           |
-| [:whale2: Containerd](.doc/containerd.md) :writing_hand:	|
+| [:whale: Docker](.docs/docker.md) :writing_hand:           |
+| [:whale2: Containerd](.docs/containerd.md) :writing_hand:	|
 
 ## :ab: The plans
 
