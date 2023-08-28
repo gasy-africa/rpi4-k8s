@@ -57,7 +57,7 @@ Your cluster includes 4 nodes (servers) that you will first need to name
 
 #### :round_pushpin: Installing tools
 
-- [ ] Instal tools [:ice_cube: kubetools](.doc/kube-tools.md) :writing_hand: enabling the cluster management, like `kubeadm` and `kubectl`
+- [ ] Instal tools [:ice_cube: kubetools](.docs/kube-tools.md) :writing_hand: enabling the cluster management, like `kubeadm` and `kubectl`
 
 #### :round_pushpin: Installing services
 
