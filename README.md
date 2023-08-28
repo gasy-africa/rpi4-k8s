@@ -1,9 +1,6 @@
-# rpi4-k8s
+# :wheel_of_dharma: Kubernetes on Raspberry Pi 4
+
 RaspberryPi 4 running a Kubernetes Cluster
-
-# pi4-cluster
-
-
 
 # :wheel_of_dharma: Kubernetes on Metal
 
@@ -193,31 +190,33 @@ standard (default)   cstor.csi.openebs.io   Delete          Immediate           
 ```
 
 
-## :rocket: Les Services
+## :rocket: The Services
 
 [:bookmark: Service](https://kubernetes.io/fr/docs/concepts/services-networking/service/)
 
+:busts_in_silhouette: group activity
 
-:busts_in_silhouette: activité en groupe
+##### :control_knobs: The control plane
 
-##### :control_knobs: Le plan de contrôle (control plane)
+- [ ] [Install](.doc/openelb.md) :pinching_hand: [openelb](https://openelb.io/).
 
-- [ ]  [Installer](.doc/openelb.md):pinching_hand: [openelb](https://openelb.io/). 
-- [ ] 
+## :clapper: Applications
 
-## :clapper: Les Applications
+:bust_in_silhouette: Individual Activity
 
-:bust_in_silhouette: activité individuelle
+Each student will have to install his/her applications in the cluster
 
-Chaque étudiant aura à installer son application dans la grappe
+- [ ] Install apps with [LENS](https://k8slens.dev/)
+- [ ] Enable :rocket: the service by applying the `annotations` related to the Porter `Load Balancer` according to the [Configuration](https://github.com/CollegeBoreal/Tutorials/tree/main/2 .MicroServices/3.Orchestration/1.Kubernetes/C.Cluster/0.Local/6.K8s/apps) examples of the following applications
+- [ ] Attach the application to your domain name
 
-- [ ]  Installer les applications avec [LENS](https://k8slens.dev/)
-- [ ] Activer :rocket: le service en appliquant les annotations reliés à l'équilibreur de charge `LoadBalancer` Porter en fonction des examples de [Configuration](https://github.com/CollegeBoreal/Tutoriels/tree/main/2.MicroServices/3.Orchestration/1.Kubernetes/C.Cluster/0.Local/6.K8s/apps) d'applications suivantes
-- [ ] Attacher l'application à votre nom de domaine
+## :chains: Network Infrastructure
 
-## :chains: L'infrastructure réseau
+- [ ]  [Local Network](.doc/network.md) :pinching_hand:
 
-- [ ]  [Réseau Local](.doc/network.md):pinching_hand:
+## :rocket: Services
+
+[:bookmark:Service](https://kubernetes.io/fr/docs/concepts/services-networking/service/)
 
 # References
 
