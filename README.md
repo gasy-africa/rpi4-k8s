@@ -81,7 +81,7 @@ Your cluster includes 4 nodes (servers) that you will first need to name
 - [ ] Install the [control plane](.docs/control-plane.md) :writing_hand:	 
 - [ ] Initialize the pod network using the [CNI plugin](.docs/cni-plugin.md) :writing_hand: Cilium
 
-:star2: But what is a [manifest](.doc/manifest.md) :writing_hand: ?
+:star2: But what is a [manifest](.docs/manifest.md) :writing_hand: ?
 
 ##### :abacus: The Data Plane
 
