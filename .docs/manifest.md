@@ -1,35 +1,36 @@
-# :scroll: [Manifeste](https://kubernetes.io/docs/reference/glossary/?all=true#term-manifest)
+# :scroll: [Manifest](https://kubernetes.io/docs/reference/glossary/?all=true#term-manifest)
 
-Spécification d'un objet API Kubernetes au format JSON ou YAML.
+Specifying a Kubernetes API object in JSON or YAML format.
 
-Un manifeste spécifie l'état souhaité d'un objet que Kubernetes conservera lorsque vous appliquez le manifeste. Chaque fichier de configuration peut contenir plusieurs manifestes.
+A manifest specifies the desired state of an object that Kubernetes will maintain when you apply the manifest. Each configuration file can contain multiple manifests.
 
-:round_pushpin: Utilisation du manifeste avec un [here document](https://en.wikipedia.org/wiki/Here_document) -- avec séparateur `EOF` (End Of File)
+:round_pushpin: Using the manifest with a [here document](https://en.wikipedia.org/wiki/Here_document) -- with `EOF` (End Of File) separator
+
 
 ```yaml
 $ kubectl apply --filename - <<EOF
 
-Le fichier yaml entre dans cet espace séparé par le séparateur EOF
+The YAML file goes into this space separated by the EOF separator
 
 ---
 EOF
 ```
 
-:round_pushpin: Utilisation du manifeste avec un fichier `.yaml`
+:round_pushpin: Using the manifest with a `.yaml` file
 
 ```yaml
 $ kubectl apply --filename monfichier.yaml
 ```
 
-:round_pushpin: Utilisation du manifeste avec un URL
+:round_pushpin: Using the manifest with a URL
 
 ```yaml
-$ kubectl apply --filename https://monserveur.com/monfichier.yaml
+$ kubectl apply --filename https://myserver.com/myfile.yaml
 ```
 
-[:back:](../#control_knobs-le-plan-de-contrôle-control-plane) :angry: Je le savais déjà
+[:back:](../#control_knobs-the-planes) :angry: I knew that already
 
-# Références
+# References
 
-https://kubernetes.io/docs/reference/kubectl/cheatsheet/#creating-objects
+- [ ] [Creating objects](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#creating-objects)
 
