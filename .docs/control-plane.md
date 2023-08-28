@@ -143,7 +143,7 @@ kubeadm join rukbat.sagittarius.gasy.africa:6443 --token ajqivp.mplynkn6sywlo0cf
 
 The cluster's initialization will give a long text where there is a :tickets: token `--token` used to:
 
-- [ ] retrieve the [configuration file](control-plane.md#b-use-your-cluster-on-the-server---control-plane):writing_hand: to manage the cluster
+- [ ] retrieve the [configuration file](control-plane.md#b-use-your-cluster-on-the-control-plane-servernode-):writing_hand: to manage the cluster
 - [ ] initialize the `pod network`
 - [ ] allow other nodes to `join` the cluster.
 
