@@ -1,24 +1,6 @@
-# :whale2: Installer le `CRI`  `containerd.io`
+# :whale2: Install the `CRI` `containerd.io`
 
-<img src='../images/ContainerEcosystem.png' width=292 height=506 > </img>
-
-## :cl: Nettoyer
-
-* Supprimer les anciens paquets (note: il n'y a pas de `.io`)
-
-```
-sudo apt remove containerd runc
-```
-> Retourne :
-```yaml
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-Package 'containerd' is not installed, so not removed
-Package 'runc' is not installed, so not removed
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-```
-
+<img src='../images/ContainerEcosystem.png' width=50% height=50% > </img>
 
 ## :a: [Install using the Docker apt repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
 
@@ -27,7 +9,7 @@ Package 'runc' is not installed, so not removed
 ```
 sudo apt-get update && sudo apt-get install ca-certificates curl gnupg
 ```
-> Retourne :
+> Returns :
 ```yaml
 Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Hit:3 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease
@@ -45,14 +27,14 @@ gnupg set to manually installed.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 ```
 
-## :b: Installer le paquet `containerd.io` 
+## :b: Install the `containerd.io` package
 
-- [ ] Installer
+- [ ] Install
 
 ```
 sudo apt install containerd.io
 ```
-> Retourne :
+> Returns :
 ```yaml
 Reading package lists... Done
 Building dependency tree... Done
@@ -61,32 +43,30 @@ containerd.io is already the newest version (1.6.21-1).
 0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
 ```
 
-- [ ] Vérifier que le service `containerd` est disponible au démarrage
+- [ ] Check that the `containerd` service is available at startup
 
 ```
 systemctl is-enabled containerd
 ```
 > enabled
 
+## :ab: Setting the `CGROUPv2` for `Systemd`
 
-## :ab: Paramétrer le `CGROUPv2` pour `Systemd`
+- [ ] Goal: Fix `cgroup` related to `Systemd` [:bangbang: Issues with "stability" with Kubernetes cluster before adding networking](https://stackoverflow.com/questions/72567945/issues-with-stability- with-kubernetes-cluster-before-adding-networking/73743910#73743910)
 
-- [ ] Objectif: Régler le `cgroup` lié à `Systemd` [:bangbang: Issues with "stability" with Kubernetes cluster before adding networking](https://stackoverflow.com/questions/72567945/issues-with-stability-with-kubernetes-cluster-before-adding-networking/73743910#73743910)
-
-:round_pushpin: Est-ce que le système utilise [`cgroup2`](https://kubernetes.io/docs/concepts/architecture/cgroups/#check-cgroup-version) ? (si non, `tmpfs` est affiché)
+:round_pushpin: Is the system using [`cgroup2`](https://kubernetes.io/docs/concepts/architecture/cgroups/#check-cgroup-version)? (if not, `tmpfs` is displayed)
 
 ```
 stat -fc %T /sys/fs/cgroup/
 ```
 > cgroup2fs
 
-
-:round_pushpin: Afficher le ficher de configuration `config.toml` à modifier
+:round_pushpin: Display the configuration file `config.toml` to modify
 
 ```
 sudo cat /etc/containerd/config.toml
 ```
-> Retourne :
+> Returns :
 ```toml
 #   Copyright 2018-2022 Docker Inc.
 
@@ -121,21 +101,21 @@ disabled_plugins = ["cri"]
 #  level = "info"
 ```
 
-:round_pushpin: Configurer `containerd`
+:round_pushpin: Configure `containerd`
 
-* Changer le fichier de configuration `/etc/containerd/config.toml` pour l'utilisation des `CGROUP`s avec `SystemD`
+* Change configuration file `/etc/containerd/config.toml` to use `CGROUP`s with `SystemD`
 
 ```
 containerd config default | sudo tee /etc/containerd/config.toml
 ```
 
-* Modifier le `CGroup` à `VRAI`
+* Change the `CGroup` to `TRUE`
 
 ```
 sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
 ```
 
-* Vérifier le `CGroup` à `VRAI`
+* Check that the `CGroup` is set to `TRUE`
 
 ```
 sudo cat /etc/containerd/config.toml | grep SystemdCgroup
@@ -143,18 +123,18 @@ sudo cat /etc/containerd/config.toml | grep SystemdCgroup
 >            SystemdCgroup = true
 
 
-- [ ] Par précaution redémarrer le service `containerd`
+- [ ] As a precaution restart the `containerd` service
 
 ```
 sudo systemctl restart containerd
 ```
 
-- [ ] Vérifier le service `containerd`
+- [ ] Check the `containerd` service
 
 ```
 systemctl status containerd
 ```
-> Retourne :
+> Returns :
 ```yaml
 ● containerd.service - containerd container runtime
      Loaded: loaded (/lib/systemd/system/containerd.service; enabled; vendor preset: enabled)
@@ -180,15 +160,15 @@ May 24 18:53:11 rukbat systemd[1]: Started containerd container runtime.
 May 24 18:53:11 rukbat containerd[173992]: time="2023-05-24T18:53:11.755845001Z" level=info msg="containerd successfully booted in 0.088282s"
 ```
 
-* taper sur `q` pour quitter
+* hit `q` to quit
 
-## :warning: Rebooter la machine
+## :warning: Reboot the machine
 
 ```
 sudo reboot -n now
 ```
 
-## [:back:](../README.md#round_pushpin-installation-des-services)
+## [:back:](../README.md#round_pushpin-installing-services)
 
 # References
 
@@ -611,3 +591,23 @@ sudo crictl info
   "lastCNILoadStatus.default": "OK"
 }
 ```
+# References
+
+## :cl: Cleaning Up
+
+* Remove old packages (note: there is no `.io`)
+
+```
+sudo apt remove containerd runc
+```
+> Returns :
+```yaml
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package 'containerd' is not installed, so not removed
+Package 'runc' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+```
+
+
