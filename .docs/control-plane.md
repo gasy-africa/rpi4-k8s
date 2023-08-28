@@ -1,23 +1,21 @@
-# :control_knobs: Le plan de contrôle (control plane)
+# :control_knobs: The control plane
 
+:x: The control plane is also called `master` but this term should be used with caution
 
-:x: Le plan de contrôle est également appelé `master` mais ce terme devrait être utilisé avec rétention
+:warning: The commands below must be done on the server that you have chosen for `control plane`
 
-:warning: Les commandes ci-dessous doivent se faire sur le serveur que vous avez choisi pour `plan de contrôle`
+The default version of `Docker` does not come with the CRI (`containerd`) you have to install it
 
-La version par défaut de `Docker` ne vient pas avec le CRI (`containerd`) il faut l'installer
-
-## :a: Installer le [plan de contrôle](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#initializing-your-control-plane-node)
-
+## :a: Install [control plane](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#initializing-your-control-plane-node)
 
 #### :construction: [Installer le CRI](#x-troubleshooting-cri-v1-runtime-api-is-not-implemented) :construction:
 
-:round_pushpin: Télécharger les images (pour accélérer le processus)
+:round_pushpin: Download images (to speed up the process)
 
 ```
 sudo kubeadm config images pull
 ```
-> Return
+> Returns:
 ```yaml
 W0524 18:55:34.815797    1402 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.2, falling back to the nearest etcd version (3.5.7-0)
 [config/images] Pulled registry.k8s.io/kube-apiserver:v1.27.2
@@ -29,12 +27,12 @@ W0524 18:55:34.815797    1402 images.go:80] could not find officially supported 
 [config/images] Pulled registry.k8s.io/coredns/coredns:v1.10.1
 ```
 
-* Véfifier l'installation des images
+* Check the image installation
 
 ```
 sudo kubeadm config images list
 ```
-> Return
+> Returns: 
 ```yaml
 W0524 18:58:04.437445    1882 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.2, falling back to the nearest etcd version (3.5.7-0)
 registry.k8s.io/kube-apiserver:v1.27.2
@@ -46,16 +44,16 @@ registry.k8s.io/etcd:3.5.7-0
 registry.k8s.io/coredns/coredns:v1.10.1
 ```
 
-:round_pushpin: Initialiser la grappe
+:round_pushpin: Initialize the cluster
 
-`<LE PLAN DE CONTROLE DE VOTRE GRAPPE>` doit être un nom de serveur avec son domaine par example `rukbat.sagittarius.gasy.africa`
+`<YOUR CLUSTER'S CONTROL PLAN>` must be a server name with its domain name for example `rukbat.sagittarius.gasy.africa`
 
 ```
 sudo kubeadm init \
   --pod-network-cidr=172.16.0.0/16 \
   --control-plane-endpoint=<LE PLAN DE CONTROLE DE VOTRE GRAPPE>
 ```
-> Retourne :
+> Returns:
 ```yaml
 [init] Using Kubernetes version: v1.27.2
 [preflight] Running pre-flight checks
