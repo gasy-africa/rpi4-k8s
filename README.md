@@ -160,7 +160,7 @@ In our environment, we will choose [openEBS](https://openebs.io) and its `Storag
 
 <img src="images/1-config-sequence.svg" width="657" height="145"> </img>
 
-:round_pushpin: [Install](.doc/openebs/install.md) :pinching_hand: the `CSI Plugin` [openEBS](https://openebs.io)
+:round_pushpin: [Install](.docs/openebs/install.md) :pinching_hand: the `CSI Plugin` [openEBS](https://openebs.io)
 
 :round_pushpin: Create the `standard` **Storage Class (sc)**
 
