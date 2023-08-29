@@ -208,7 +208,7 @@ Each student will have to install his/her applications in the cluster
 
 ## :chains: Network Infrastructure
 
-- [ ]  [Local Network](.doc/network.md) :pinching_hand:
+- [ ]  [Local Network](.docs/network.md) :pinching_hand:
 
 ## :rocket: Services
 
