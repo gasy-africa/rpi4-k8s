@@ -114,10 +114,6 @@ blockdevice-7e848c90-cca2-4ef4-9fdc-90cff05d5bb5   rigel       102687672   Claim
 
 ## :ab: [Storage Classes](https://kubernetes.io/docs/concepts/storage/storage-classes/)
 
-:round_pushpin: Créer la **Class de Stockage** `standard` 
-
-- [ ] après avoir modifié la valeur du champ `ReplicaCount` au nombre de noeuds sur la grappe (idéalement :three:)
-
 :round_pushpin: Create the `standard` **Storage Class**
 
 - [ ] after editing the `ReplicaCount` value field to the number of nodes on the cluster (ideally :three:)
