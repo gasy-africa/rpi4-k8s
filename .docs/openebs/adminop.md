@@ -142,7 +142,7 @@ kubectl apply --filename csi-cstor-sc.yaml
 ```
 > storageclass.storage.k8s.io/standard created
 
-:round pushpin: The default `standard` storage class
+:round_pushpin: The default `standard` storage class
 
 - [ ] Check the `standard` storage class
 
@@ -161,7 +161,6 @@ standard                    cstor.csi.openebs.io                                
 kubectl patch storageclass standard -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 > storageclass.storage.k8s.io/standard patched
-
 
 # [:back:](../../#floppy_disk-storage)
 
