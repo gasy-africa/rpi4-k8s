@@ -168,7 +168,7 @@ In our environment, we will choose [openEBS](https://openebs.io) and its `Storag
 - [ ] Create a `pool` storage tank with the :three: devices
 - [ ] Create `standard` **storage class (sc)** with `pool` storage tank
 
-Use the following [admin operations](.doc/openebs/adminop.md) :pinching_hand:. for creating the **storage class (sc)** `standard`
+Use the following [admin operations](.docs/openebs/adminop.md) :pinching_hand:. for creating the **storage class (sc)** `standard`
 
 :round_pushpin: You can now use the `standard` **storage class (sc)** defined by `default`
 
