@@ -89,4 +89,4 @@ NAME   	NAMESPACE	REVISION	UPDATED                                	STATUS  	CHAR
 openebs	openebs  	1       	2023-04-16 10:27:51.952551904 +0000 UTC	deployed	openebs-3.5.0	3.5.0      
 ```
 
-# [:back:](../../README.md#floppy_disk-the-storage)
+# [:back:](../../README.md#floppy_disk-storage)
