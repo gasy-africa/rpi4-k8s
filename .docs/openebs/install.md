@@ -4,39 +4,39 @@
 
 ## :o2: Installation
 
-#### :round_pushpin: avec `openebs operator`
+#### :round_pushpin: using `openebs operator`
 
 ```
 kubectl apply -f https://openebs.github.io/charts/openebs-operator.yaml
 ```
 
-#### :round_pushpin: avec helm :package:
+#### :round_pushpin: using helm :package:
 
-- [ ] Installer le référentiel
+- [ ] Install the repository
 
 ```
 helm repo add openebs https://openebs.github.io/charts
 ```
 > "openebs" has been added to your repositories
 
-- [ ] Mettre à jour les référentiels
+- [ ] Update repositories
 
 ```
 helm repo update
 ```
-> Retourne :
+> Returns :
 ```yaml
 Hang tight while we grab the latest from your chart repositories...
 ...Successfully got an update from the "bitnami" chart repository
 Update Complete. ⎈Happy Helming!⎈
 ```
 
-- [ ] Installer `openebs` dans l'espace de noms `openebs` en activant `CSTOR`
+- [ ] Install `openebs` in the `openebs` namespace by enabling `CSTOR`
 
 ```
 helm install openebs --namespace openebs openebs/openebs --set cstor.enabled=true --create-namespace
 ```
-> Retourne :
+> Returns :
 ```yaml
 NAME: openebs
 LAST DEPLOYED: Sun Apr 16 10:27:51 2023
@@ -78,15 +78,15 @@ For more information,
 - connect with an active community on Kubernetes slack #openebs channel.
 ```
 
-## :o: Vérifier l'installation
+## :o: Check the installation
 
 ```
 helm ls --namespace openebs
 ```
-> Retourne :
+> Returns :
 ```yaml 
 NAME   	NAMESPACE	REVISION	UPDATED                                	STATUS  	CHART        	APP VERSION
 openebs	openebs  	1       	2023-04-16 10:27:51.952551904 +0000 UTC	deployed	openebs-3.5.0	3.5.0      
 ```
 
-## [:back:](../../README.md#floppy_disk-le-stockage)
+# [:back:](../../README.md#floppy_disk-the-storage)
