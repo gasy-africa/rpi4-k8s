@@ -1,6 +1,6 @@
 ## :zero: Node Preparation
 
-- [ ] Make sure you have the right hostname (based on your cluster)
+- [ ] Make sure you have the right hostname (based on your cluster's naming)
 
 ```
 hostnamectl --static set-hostname rukbat
