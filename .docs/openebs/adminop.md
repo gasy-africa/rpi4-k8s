@@ -1,42 +1,36 @@
-# OpenEBS - Operations d'administration
+# OpenEBS - Administration Operations
 
-:control_knobs: Sur le plan de contrôle
+:control_knobs: On the control plane
 
-https://openebs.io/docs/#admin-operations
+## :a: Block Devices - BlockDevice CR (Custom Resource)
 
-## :a: Les Périphériques en mode bloc - BlockDevice CR (Custom Resource)
+- [ ] Create devices :roll_of_paper:
 
+> Execute `kubectl` commands referring to `blockdevice-****-****-****-****.md` files
 
-- [ ] Créer les périphériques :roll_of_paper:
+* Create one file per node and put it in the cluster directory following the below pattern:
 
-> Éxécuter les commandes `kubectl` se reférant aux fichiers `blockdevice-****-****-****-****.md`
+- [ ] The file name should be in the form `blockdevice-xxxx-xxxx-xxx-xxx.yaml`
 
-* Créer un fichier par noeud et le mettre dans le répertoire de la grappe en suivant le modèle ci-dessous:
-
-- [ ] Le nom du fichier devra être sous la forme `blockdevice-xxxx-xxxx-xxx-xxx.yaml`
-
-- [ ] Executer le fichier (remplacer par le bon nom de fichier `blockdevice-xxxx-xxxx-xxx-xxx.yaml`)
+- [ ] Execute the file (replace with the correct file name `blockdevice-xxxx-xxxx-xxx-xxx.yaml`)
 
 ```
 kubectl apply --namespace openebs --filename blockdevice-c3b2e1a8-85b0-fc4e-8caf-5ba8c2fd4444.yaml
 ```
 > blockdevice.openebs.io/blockdevice-c3b2e1a8-85b0-fc4e-8caf-5ba8c2fd4444 created
 
+:warning: Make sure the file has the correct `iscsi-lv` device information
 
-:warning: Bien vérifier que le fichier aient les bonnes informations du périphérique `iscsi-lv`
+:bulb: There should be :three: files to execute
 
-
-:bulb: Il devrait y avoir :three: fichiers à éxécuter
-
-
-- [ ] Vérifier la création des périphériques
+- [ ] Check device creation
 
 > blockdevices or bd
 
 ```
 kubectl get blockdevices --namespace openebs   
 ```
-> Retourne
+> Returns: 
 <pre>
 NAME                                               NODENAME   SIZE          CLAIMSTATE   STATUS   AGE
 blockdevice-c3b2e1a8-85b0-fc4e-8caf-5ba8c2fd4444   nunki      42949672960   Unclaimed    Active   11s
@@ -49,11 +43,11 @@ kubectl get blockdeviceclaims.openebs.io --namespace openebs
 ```
 > No resources found in openebs namespace.
 
-## :b: Le réservoir de stockage - Storage Pool
+## :b: Storage Pool
 
-:round_pushpin: Créer le réservoir de stockage `cstor` `cStor Storage Pool` (csp)
+:round_pushpin: Create `cStor Storage Pool` (csp)
 
-- [ ] modifier le fichier de configuration ci-dessous en changeant les périphériques `block device`
+- [ ] edit the configuration file below changing the `block device` device information
 
 ```yaml
 apiVersion: cstor.openebs.io/v1
@@ -95,25 +89,38 @@ spec:
 
 - [ ] Exécuter la commande `kubectl` à partir du fichier.
 
+:round_pushpin: Save `cspc-single.yaml` file
+
+- [ ] after editing the devices save the file under the name `cspc-single.yaml` in your cluster directory
+
+- [ ] Execute the `kubectl` command from the file.
+
 ```
 kubectl apply --filename cspc-single.yaml
 ```
 
-:round_pushpin: Vérifier que les périphériques passent à l'état `claimed` - Contesté
+:round_pushpin: Check that devices move to `Claimed` state
 
 ```
 $ kubectl get blockdevices --namespace openebs
+```
+> Returns:
+```yaml
 NAME                                               NODENAME    SIZE        CLAIMSTATE   STATUS   AGE
 blockdevice-23e1292d-32f5-4528-8f7f-3abaee070a03   bellatrix   102687672   Claimed      Active   16m
 blockdevice-3fa7d473-d0f1-4532-bcd4-a402241eeff1   saiph       102687672   Claimed      Active   16m
 blockdevice-7e848c90-cca2-4ef4-9fdc-90cff05d5bb5   rigel       102687672   Claimed      Active   16m
 ```
 
-## :ab: [Classe de Stockage](https://kubernetes.io/docs/concepts/storage/storage-classes/)
+## :ab: [Storage Classes](https://kubernetes.io/docs/concepts/storage/storage-classes/)
 
 :round_pushpin: Créer la **Class de Stockage** `standard` 
 
 - [ ] après avoir modifié la valeur du champ `ReplicaCount` au nombre de noeuds sur la grappe (idéalement :three:)
+
+:round_pushpin: Create the `standard` **Storage Class**
+
+- [ ] after editing the `ReplicaCount` value field to the number of nodes on the cluster (ideally :three:)
 
 ```yaml
 kind: StorageClass
@@ -131,28 +138,28 @@ parameters:
 ---
 ```
 
-- [ ] sauvegarder sous le nom `csi-cstor-sc.yaml` dans le répertoire de votre grappe
-- [ ] Exécuter la commande `kubectl` à partir du fichier.
+- [ ] save as `csi-cstor-sc.yaml` in your cluster directory
+- [ ] Execute the `kubectl` command from the file.
 
 ```
 kubectl apply --filename csi-cstor-sc.yaml
 ```
 > storageclass.storage.k8s.io/standard created
 
-:round_pushpin: La classe par défaut de stockage `standard`
+:round pushpin: The default `standard` storage class
 
-- [ ] Vérifier la classe de stockage `standard`
+- [ ] Check the `standard` storage class
 
 ```
 kubectl get storageclass standard
 ```
-> Retourne :
+> Returns :
 <pre>
 NAME                        PROVISIONER                                                RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
 standard                    cstor.csi.openebs.io                                       Delete          Immediate              true                   4s
 </pre>
 
-- [ ] Appliquer le stockage par défaut à **standard**
+- [ ] Apply default storage to **standard**
 
 ```
 kubectl patch storageclass standard -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
@@ -160,7 +167,7 @@ kubectl patch storageclass standard -p '{"metadata": {"annotations":{"storagecla
 > storageclass.storage.k8s.io/standard patched
 
 
-## [:back:](../../#floppy_disk-le-stockage)
+# [:back:](../../#floppy_disk-storage)
 
 # References
 
