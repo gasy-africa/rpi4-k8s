@@ -1,7 +1,5 @@
 # OpenEBS :package:
 
-- [ ] [ Installation and Getting Started ](https://github.com/openebs/openebs#installation-and-getting-started)
-
 ## :o2: Installation
 
 #### :round_pushpin: using `openebs operator`
@@ -90,3 +88,8 @@ openebs	openebs  	1       	2023-04-16 10:27:51.952551904 +0000 UTC	deployed	open
 ```
 
 # [:back:](../../README.md#floppy_disk-storage)
+
+# References
+
+- [ ] [ Installation and Getting Started ](https://github.com/openebs/openebs#installation-and-getting-started)
+
