@@ -1,10 +1,21 @@
 # Imager
 
 
- <img src=images/rpi-imager-01.png width=50% height=50% > <img>
- <img src=images/rpi-imager-02.png width=50% height=50% > <img>
- <img src=images/rpi-imager-03.png width=50% height=50% > <img>
- <img src=images/rpi-imager-04.png width=50% height=50% > <img>
+<img src=images/rpi-imager-01.png width=50% height=50% > <img>
+<img src=images/rpi-imager-02.png width=50% height=50% > <img>
+<img src=images/rpi-imager-03.png width=50% height=50% > <img>
+<img src=images/rpi-imager-04.png width=50% height=50% > <img>
+<img src=images/rpi-imager-04.png width=50% height=50% > <img>
+<img src=images/rpi-imager-05.png width=50% height=50% > <img>
+<img src=images/rpi-imager-06.png width=50% height=50% > <img>
+<img src=images/rpi-imager-07.png width=50% height=50% > <img>
+<img src=images/rpi-imager-08.png width=50% height=50% > <img>
+<img src=images/rpi-imager-09.png width=50% height=50% > <img>
+<img src=images/rpi-imager-10.png width=50% height=50% > <img>
+<img src=images/rpi-imager-11.png width=50% height=50% > <img>
+<img src=images/rpi-imager-12.png width=50% height=50% > <img>
+<img src=images/rpi-imager-13.png width=50% height=50% > <img>
+
 
  ```
 sudo vi /etc/netplan/50-cloud-init.yaml
