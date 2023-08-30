@@ -20,10 +20,10 @@ network:
     ethernets:
         eth0:
             addresses:
-               - 192.168.2.200/24
+               - 192.168.1.200/24
             routes:
                - to: default
-                 via: 192.168.2.1
+                 via: 192.168.1.1
             nameservers:
                addresses:
                   - 1.1.1.1
