@@ -7,10 +7,10 @@
  <img src=images/rpi-imager-04.png width=50% height=50% > <img>
 
  ```
-$ sudo vi /etc/netplan/50-cloud-init.yaml
+sudo vi /etc/netplan/50-cloud-init.yaml
 ```
 > Edit:
-```netplan
+```yaml
 # This file is generated from information provided by the datasource.  Changes
 # to it will not persist across an instance reboot.  To disable cloud-init's
 # network configuration capabilities, write a file
