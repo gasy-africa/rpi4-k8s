@@ -2,7 +2,7 @@
 
 | ToC |
 |-|
-| :a: [Install] Raspberry Pi Imager |
+| :a: [Install](#a-install-raspberry-pi-imager) Raspberry Pi Imager |
 
 --- 
 
