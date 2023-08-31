@@ -39,6 +39,12 @@ brew install --cask raspberry-pi-imager
 - Click on the :gear: Button to change the boot settings
 
 <img src=images/rpi-imager-07.png width=50% height=50% > <img>
+
+- SSH & Credentials
+
+> Give the public key to put in the `~/.ssh/authorized_keys` file
+> the Username i.e. Ubuntu
+
 <img src=images/rpi-imager-08.png width=50% height=50% > <img>
 <img src=images/rpi-imager-09.png width=50% height=50% > <img>
 <img src=images/rpi-imager-10.png width=50% height=50% > <img>
