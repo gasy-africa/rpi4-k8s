@@ -28,7 +28,7 @@ brew install --cask raspberry-pi-imager
 
 <img src=images/rpi-imager-04.png width=50% height=50% > <img>
 
-- Click on the `Choose Sto...` Button
+- Click on the `CHOOSE STO...` Button
 
 <img src=images/rpi-imager-05.png width=50% height=50% > <img>
 <img src=images/rpi-imager-06.png width=50% height=50% > <img>
