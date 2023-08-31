@@ -12,7 +12,12 @@ brew install --cask raspberry-pi-imager
 
 - [ ] `Burn` the Boot Drive
 
+- Start [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager)
+
 <img src=images/rpi-imager-01.png width=50% height=50% > <img>
+
+- 
+
 <img src=images/rpi-imager-02.png width=50% height=50% > <img>
 <img src=images/rpi-imager-03.png width=50% height=50% > <img>
 <img src=images/rpi-imager-04.png width=50% height=50% > <img>
