@@ -31,6 +31,9 @@ brew install --cask raspberry-pi-imager
 - Click on the `CHOOSE STO...` Button
 
 <img src=images/rpi-imager-05.png width=50% height=50% > <img>
+
+- Select the `...Storage Media...`
+
 <img src=images/rpi-imager-06.png width=50% height=50% > <img>
 <img src=images/rpi-imager-07.png width=50% height=50% > <img>
 <img src=images/rpi-imager-08.png width=50% height=50% > <img>
