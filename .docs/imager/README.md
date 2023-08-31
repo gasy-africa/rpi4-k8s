@@ -16,7 +16,7 @@ brew install --cask raspberry-pi-imager
 
 ## :b: Create a MicroSD Boot Drive
 
-- [ ] Instart a [MicroSD](https://en.wikipedia.org/wiki/SD_card#:~:text=slot,microSD) Card (at least 16Gb of content) 
+- [ ] Insert a [MicroSD](https://en.wikipedia.org/wiki/SD_card#:~:text=slot,microSD) Card (at least 16Gb of content) 
 
 - [ ] `Burn` the Boot Drive
 
