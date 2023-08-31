@@ -23,6 +23,9 @@ brew install --cask raspberry-pi-imager
 - Select `Ubuntu`
 
 <img src=images/rpi-imager-03.png width=50% height=50% > <img>
+
+- Select `Ubuntu Server `
+
 <img src=images/rpi-imager-04.png width=50% height=50% > <img>
 <img src=images/rpi-imager-04.png width=50% height=50% > <img>
 <img src=images/rpi-imager-05.png width=50% height=50% > <img>
