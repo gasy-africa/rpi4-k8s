@@ -68,6 +68,9 @@ brew install --cask raspberry-pi-imager
 
 <img src=images/rpi-imager-13.png width=50% height=50% > <img>
 
+## :ab: Change the IP Address
+
+Put the card in the Pi and Boot it. 
 
  ```
 sudo vi /etc/netplan/50-cloud-init.yaml
