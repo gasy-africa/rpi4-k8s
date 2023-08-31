@@ -4,7 +4,7 @@
 |-|
 | :a: [Install :point_left:](#a-install-raspberry-pi-imager) Raspberry Pi Imager |
 | :b: [Create :point_left:](#b-create-a-microsd-boot-drive) a MicroSD Boot Drive |
-| :ab: [Change :point_left:](#ab-change-the-ip-address) the IP Address |
+| :ab: [Edit :point_left:](#ab-edit-the-ip-address) the IP Address |
 
 --- 
 
@@ -76,7 +76,7 @@ brew install --cask raspberry-pi-imager
 
 <img src=images/rpi-imager-13.png width=50% height=50% > <img>
 
-## :ab: Change the IP Address
+## :ab: Edit the IP Address
 
 - Put the card in the Pi and Boot it.
 - at the commande prompt, get on the terminal
