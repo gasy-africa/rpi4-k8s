@@ -51,6 +51,9 @@ brew install --cask raspberry-pi-imager
 - Click on the `WRITE` Button
 
 <img src=images/rpi-imager-09.png width=50% height=50% > <img>
+
+- Click on the `YES` Button to erase all data on the media
+
 <img src=images/rpi-imager-10.png width=50% height=50% > <img>
 <img src=images/rpi-imager-11.png width=50% height=50% > <img>
 <img src=images/rpi-imager-12.png width=50% height=50% > <img>
