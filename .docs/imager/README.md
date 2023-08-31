@@ -116,3 +116,5 @@ sudo netplan apply
 ```
 
 - Reboot the Pi
+
+# [ :back: ](../README.md#parking-boot)
