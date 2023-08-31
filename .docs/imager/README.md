@@ -47,6 +47,9 @@ brew install --cask raspberry-pi-imager
 > Set the credentials by giving the Username i.e. Ubuntu and password
 
 <img src=images/rpi-imager-08.png width=50% height=50% > <img>
+
+- Click on the `WRITE` Button
+
 <img src=images/rpi-imager-09.png width=50% height=50% > <img>
 <img src=images/rpi-imager-10.png width=50% height=50% > <img>
 <img src=images/rpi-imager-11.png width=50% height=50% > <img>
