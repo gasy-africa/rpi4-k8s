@@ -16,7 +16,7 @@ brew install --cask raspberry-pi-imager
 
 <img src=images/rpi-imager-01.png width=50% height=50% > <img>
 
-- 
+- Select `Other General Purpose OS`
 
 <img src=images/rpi-imager-02.png width=50% height=50% > <img>
 <img src=images/rpi-imager-03.png width=50% height=50% > <img>
