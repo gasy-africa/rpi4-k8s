@@ -80,7 +80,7 @@ brew install --cask raspberry-pi-imager
 
 - Put the card in the Pi and Boot it.
 - at the commande prompt, get on the terminal
-- as root open the below file and edit the file with the IP address content
+- as root, open the below file `50-cloud-init.yaml` and edit it by adding the suggested IP address content
 
  ```
 sudo vi /etc/netplan/50-cloud-init.yaml
