@@ -4,6 +4,7 @@
 |-|
 | :a: [Install :point_left:](#a-install-raspberry-pi-imager) Raspberry Pi Imager |
 | :b: [Create :point_left:](#b-create-a-microsd-boot-drive) a MicroSD Boot Drive |
+| :ab: [Change :point_left:](#ab-change-the-ip-address) the IP Address |
 
 --- 
 
