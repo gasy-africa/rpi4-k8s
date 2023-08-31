@@ -80,7 +80,7 @@ brew install --cask raspberry-pi-imager
 
 - Put the card in the Pi and Boot it. (you need a KVM - :keyboard::tv::computer_mouse:)
 - at the commande prompt, get on the terminal
-- as root, open the below file `50-cloud-init.yaml` and edit it by adding the suggested IP address content (i.e. based on your cluster configuration)
+- as root, open the below file `50-cloud-init.yaml` and edit it by adding the suggested IP address content (i.e. based on your cluster's configuration)
 
  ```
 sudo vi /etc/netplan/50-cloud-init.yaml
