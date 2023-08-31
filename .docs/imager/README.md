@@ -27,7 +27,9 @@ brew install --cask raspberry-pi-imager
 - Select `Ubuntu Server 22.04.03 LTS (64 bits)` :information_source:
 
 <img src=images/rpi-imager-04.png width=50% height=50% > <img>
-<img src=images/rpi-imager-04.png width=50% height=50% > <img>
+
+- Select
+
 <img src=images/rpi-imager-05.png width=50% height=50% > <img>
 <img src=images/rpi-imager-06.png width=50% height=50% > <img>
 <img src=images/rpi-imager-07.png width=50% height=50% > <img>
