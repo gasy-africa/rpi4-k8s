@@ -36,7 +36,7 @@ Your cluster includes 4 nodes (servers) that you will first need to name
 | data plane    | alnasl.sagittarius.gasy.africa  | `192.168.1.202/24` | 4GB Ram,      4cores  |
 | data plane    | ascella.sagittarius.gasy.africa | `192.168.1.203/24` | 4GB Ram,      4cores  |
 
-## :parking: Boot
+## :o: Boot
 
 :bust_in_silhouette: Individual Activity
 
