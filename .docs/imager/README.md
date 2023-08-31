@@ -12,11 +12,11 @@ brew install --cask raspberry-pi-imager
 
 - [ ] `Burn` the Boot Drive
 
-- Start [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager)
+- Start [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager) and click on `CHOOSE OS`
 
 <img src=images/rpi-imager-01.png width=50% height=50% > <img>
 
-- Select `Other General Purpose OS` and click on `CHOOSE OS`
+- Select `Other General Purpose OS` 
 
 <img src=images/rpi-imager-02.png width=50% height=50% > <img>
 <img src=images/rpi-imager-03.png width=50% height=50% > <img>
