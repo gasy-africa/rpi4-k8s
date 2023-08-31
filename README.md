@@ -6,8 +6,8 @@ RaspberryPi 4 running a Kubernetes Cluster
 
 | Chapters                                  | Descriptions                                                       |
 |-------------------------------------------|--------------------------------------------------------------------|
-| [:parking: Boot](#parking-boot)           | Creating the boot drives                                           |
 | [:o2: Naming](#o2-naming)                 | Creating and naming own cluster                                    |
+| [:parking: Boot](#parking-boot)           | Creating the boot drives                                           |
 | [:a: The preparation](#a-the-preparation) | Prepare a node                                                     |
 | [:b: The components](#b-the-components)   | Install the components forming the cluster (tools and services)    |
 | [:ab: The plans](#ab-the-plans)           | Deploy `kubernetes` control and data plans                         |
@@ -16,11 +16,6 @@ RaspberryPi 4 running a Kubernetes Cluster
 | [:rocket: The services](#rocket-the-services) | Enable applications to be delivered through services |
 | [:chains: The network Infrastructure](#chains-network-infrastructure) | Defines the environment where the cluster evolves |
 
-## :parking: Boot
-
-:bust_in_silhouette: Individual Activity
-
-Prepare the Raspberry Pis (pural, depending on your cluster size) by creating the :boot: boot drives using [RPI Imager](.docs/imager) :writing_hand:
 
 ## :o2: Naming
 
@@ -40,6 +35,12 @@ Your cluster includes 4 nodes (servers) that you will first need to name
 | data plane    | nunki.sagittarius.gasy.africa   | `192.168.1.201/24` | 4GB Ram,      4cores  |
 | data plane    | alnasl.sagittarius.gasy.africa  | `192.168.1.202/24` | 4GB Ram,      4cores  |
 | data plane    | ascella.sagittarius.gasy.africa | `192.168.1.203/24` | 4GB Ram,      4cores  |
+
+## :parking: Boot
+
+:bust_in_silhouette: Individual Activity
+
+Prepare the Raspberry Pis (plural, depending on your cluster size) by creating the :boot: boot drives using [RPI Imager](.docs/imager) :writing_hand:
 
 ## :a: The preparation
 
