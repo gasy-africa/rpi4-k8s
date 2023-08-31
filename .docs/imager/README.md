@@ -43,6 +43,7 @@ brew install --cask raspberry-pi-imager
 - SSH & Credentials
 
 > Give the public key to put in the `~/.ssh/authorized_keys` file
+> 
 > the Username i.e. Ubuntu
 
 <img src=images/rpi-imager-08.png width=50% height=50% > <img>
