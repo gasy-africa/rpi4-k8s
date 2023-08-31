@@ -35,6 +35,9 @@ brew install --cask raspberry-pi-imager
 - Select the :trident: `...Storage Media...`
 
 <img src=images/rpi-imager-06.png width=50% height=50% > <img>
+
+- Click on the :gear: Button to change the boot settings
+
 <img src=images/rpi-imager-07.png width=50% height=50% > <img>
 <img src=images/rpi-imager-08.png width=50% height=50% > <img>
 <img src=images/rpi-imager-09.png width=50% height=50% > <img>
