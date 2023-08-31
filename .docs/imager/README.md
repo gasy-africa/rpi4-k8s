@@ -70,7 +70,9 @@ brew install --cask raspberry-pi-imager
 
 ## :ab: Change the IP Address
 
-Put the card in the Pi and Boot it. 
+- Put the card in the Pi and Boot it.
+- at the commande prompt, get on the terminal
+- as root open the below file and edit the file with the IP address content
 
  ```
 sudo vi /etc/netplan/50-cloud-init.yaml
@@ -99,6 +101,10 @@ network:
     version: 2
 ```
 
+- Apply the IP Address configuration
+
 ```
 sudo netplan apply
 ```
+
+- Reboot the Pi
