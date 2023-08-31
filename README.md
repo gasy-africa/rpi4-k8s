@@ -6,6 +6,7 @@ RaspberryPi 4 running a Kubernetes Cluster
 
 | Chapters                                  | Descriptions                                                       |
 |-------------------------------------------|--------------------------------------------------------------------|
+| [:parking: Boot](#parking-boot)           | Creating the boot drives                                           |
 | [:o2: Naming](#o2-naming)                 | Creating and naming own cluster                                    |
 | [:a: The preparation](#a-the-preparation) | Prepare a node                                                     |
 | [:b: The components](#b-the-components)   | Install the components forming the cluster (tools and services)    |
@@ -15,6 +16,9 @@ RaspberryPi 4 running a Kubernetes Cluster
 | [:rocket: The services](#rocket-the-services) | Enable applications to be delivered through services |
 | [:chains: The network Infrastructure](#chains-network-infrastructure) | Defines the environment where the cluster evolves |
 
+## :parking: Boot
+
+:boot: [RPI Imager](.docs/imager)
 
 ## :o2: Naming
 
