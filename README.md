@@ -18,6 +18,8 @@ RaspberryPi 4 running a Kubernetes Cluster
 
 ## :parking: Boot
 
+:bust_in_silhouette: Individual Activity
+
 :boot: Prepare the Raspberry Pis by creating the boot drives using [RPI Imager](.docs/imager) :writing_hand:
 
 ## :o2: Naming
