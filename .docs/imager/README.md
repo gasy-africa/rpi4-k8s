@@ -1,4 +1,16 @@
-# Imager
+# Raspberry Pi Imager
+
+## :a: Install Raspberry Pi Imager
+
+```
+brew install --cask raspberry-pi-imager
+```
+
+## :b: Create a MicroSD Boot Drive
+
+- [ ] Instart a [MicroSD](https://en.wikipedia.org/wiki/SD_card#:~:text=slot,microSD) Card
+
+
 
 
 <img src=images/rpi-imager-01.png width=50% height=50% > <img>
